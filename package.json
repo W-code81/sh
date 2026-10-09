@@ -1,0 +1,12 @@
+{
+  "name": "shift-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.8.1",
+  "scripts": {
+    "dev:client": "pnpm --filter shift dev",
+    "dev:admin": "pnpm --filter shift-admin dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint"
+  }
+}

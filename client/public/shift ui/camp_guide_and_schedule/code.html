@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline-variant":"#4c4355","background":"#14121a","surface-container-low":"#1d1a22","surface-bright":"#3b3840","on-surface-variant":"#cec2d8","on-tertiary-fixed-variant":"#005236","on-primary-container":"#f2e3ff","surface-container-high":"#2b2931","on-tertiary-fixed":"#002113","inverse-on-surface":"#322f37","surface-container":"#211e26","on-primary":"#450086","tertiary-container":"#007751","on-error":"#690005","surface-container-lowest":"#0f0d14","secondary-container":"#5a2a9c","tertiary-fixed":"#6ffbbe","surface-dim":"#14121a","error-container":"#93000a","primary":"#d8b9ff","on-secondary-fixed-variant":"#5a2a9c","secondary-fixed":"#eddcff","surface-variant":"#36333c","on-surface":"#e7e0eb","inverse-surface":"#e7e0eb","tertiary":"#4edea3","on-secondary-container":"#c9a4ff","on-tertiary":"#003824","surface":"#14121a","on-secondary-fixed":"#280056","on-secondary":"#430684","surface-tint":"#d8b9ff","primary-fixed":"#eddcff","on-primary-fixed-variant":"#6300bb","secondary":"#d7baff","on-error-container":"#ffdad6","outline":"#978da1","primary-container":"#8b2cf5","surface-container-highest":"#36333c","inverse-primary":"#8018ea","on-background":"#e7e0eb","on-primary-fixed":"#290055","error":"#ffb4ab","on-tertiary-container":"#83ffc6","primary-fixed-dim":"#d8b9ff","tertiary-fixed-dim":"#4edea3","secondary-fixed-dim":"#d7baff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter-mobile":"1rem","gutter":"1.5rem","space-xl":"2.5rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1.25rem","space-lg":"1.5rem","space-md":"1rem"},fontFamily:{"headline-md":["Outfit"],"headline-sm":["Outfit"],"label-lg":["Inter"],"body-sm":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-lg-mobile":["Outfit"],"headline-xl":["Outfit"],"headline-lg":["Outfit"],"label-md":["Inter"],"headline-xl-mobile":["Outfit"]},fontSize:{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-lg":["15px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl-mobile":["34px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-20 max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Evently Camp Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WEOVUZUiwRc3CImxryQYfVjlumSQwBNsgAfhrPeffTF7zLOIZsTrDTxiXfrLy3oWHL72dKy7L-KsJvP0Yb4PWWVnjoki1QNNvrMIU2Zri4xdI8yduZ-5v8zzB0mfR_7WYI1Ot1ebn-Hx9YmKjTYXVfutrusvIyn8sUCG3Ww6tsPUX_GGOn5-gX_6Q7Ngfa_Sx7lSysCjbiCEIXetgsBVwRt_Mm1AO-4pJt7qEu9oHfxcEFkmOb_5qY-zs"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Evently Camp</span></div><nav class="hidden md:flex items-center gap-space-sm" data-active-classes="bg-surface-container text-primary font-label-lg text-label-lg rounded-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"><a class="px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="camp-overview" href="#">About Camp</a><a aria-current="page" class="px-space-md py-space-sm transition-all bg-surface-container text-primary font-label-lg text-label-lg rounded-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]" data-path="camp-guide" href="#">Camp Guide</a><a class="px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="check-registration" href="#">Check My Registration</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-xl font-headline-sm text-label-lg text-on-primary bg-primary-container hover:bg-secondary-container hover:text-on-secondary shadow-[0_4px_20px_0_rgba(139,44,245,0.4)] transition-all active:scale-[0.98]" data-path="registration" href="#">Register Now</a></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-18rem)]"><div class="flex flex-col w-full">
+<section class="relative w-full overflow-hidden bg-surface-container-lowest py-space-xl">
+<div class="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-primary-container/15 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 left-1/4 w-80 h-80 rounded-full bg-tertiary-container/10 blur-3xl pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin relative z-10 flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">landscape</span>
+          Official Attendee Field Guide
+        </div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-tertiary bg-surface-container px-space-md py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+          Camp Operations Live
+        </div>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="max-w-3xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+            Camp Guide &amp; Daily Schedule
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+            Everything you need to know for <span class="text-primary font-medium">Beyond the Ordinary 2025</span> at Pinecrest Mountain Retreat.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs self-start md:self-auto">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-high hover:bg-surface-bright text-on-surface rounded-xl font-label-md text-label-md transition-colors shadow-sm" id="downloadPdfBtn">
+<span class="material-symbols-outlined text-base">download</span>
+            Offline PDF Guide
+          </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm p-space-md rounded-2xl bg-surface-container-low shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+<div class="flex items-center gap-space-sm px-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Dates</span>
+<span class="font-label-lg text-label-lg text-on-surface">Aug 14–17, 2025</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm px-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">altitude</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Location &amp; Altitude</span>
+<span class="font-label-lg text-label-lg text-on-surface">Pinecrest · Elevation 5,600 ft</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm px-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined">e911_emergency</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Emergency Line (24/7)</span>
+<a class="font-label-lg text-label-lg text-primary hover:underline" href="tel:5552345678">(555) 234-5678</a>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 pt-space-xs scrollbar-none" id="scheduleTabs">
+<button class="tab-btn active px-space-md py-space-sm rounded-xl font-label-md text-label-md whitespace-nowrap transition-all bg-primary-container text-on-primary shadow-[0_2px_12px_rgba(139,44,245,0.35)]" data-target="day1">
+          Day 1: Arrival &amp; Opening
+        </button>
+<button class="tab-btn px-space-md py-space-sm rounded-xl font-label-md text-label-md whitespace-nowrap transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-bright" data-target="day2">
+          Day 2: Encounter
+        </button>
+<button class="tab-btn px-space-md py-space-sm rounded-xl font-label-md text-label-md whitespace-nowrap transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-bright" data-target="day3">
+          Day 3: Adventure &amp; Campfire
+        </button>
+<button class="tab-btn px-space-md py-space-sm rounded-xl font-label-md text-label-md whitespace-nowrap transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-bright" data-target="day4">
+          Day 4: Commissioning &amp; Departure
+        </button>
+<a class="px-space-md py-space-sm rounded-xl font-label-md text-label-md whitespace-nowrap transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-bright flex items-center gap-1" href="#camp-essentials">
+<span>Guidelines &amp; FAQs</span>
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+</div>
+</section>
+<section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="schedule-pane flex flex-col gap-space-md" id="day1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="text-tertiary font-headline-sm text-headline-sm">Thursday, Aug 14</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline font-label-sm text-label-sm">5 Events Scheduled</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mountain Standard Time (MST)</span>
+</div>
+<div class="relative pl-6 md:pl-8 flex flex-col gap-space-lg before:content-[''] before:absolute before:left-2 md:before:left-3 before:top-4 before:bottom-4 before:w-0.5 before:bg-surface-container-highest">
+<div class="relative flex flex-col gap-space-xs group">
+<div class="absolute -left-[27px] md:-left-[31px] top-1.5 w-4 h-4 rounded-full bg-primary-container shadow-[0_0_12px_rgba(139,44,245,0.9)] flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">02:00 PM – 04:30 PM</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wide">Arrival</span>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all shadow-[0_4px_16px_rgba(0,0,0,0.25)] flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Check-in, Cabin Registration &amp; Bunk Assignment</h3>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">domain</span>
+<span>Main Lodge Deck</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Collect welcome kit, official camp journal, lanyard name badge, and cabin key card. Medical staff will verify waivers and collect emergency inhalers/EpiPens.
+                </p>
+<div class="flex items-center gap-space-sm pt-space-xs text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">badge</span> Luggage tags provided</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">medical_information</span> Health checkpoint active</span>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col gap-space-xs group">
+<div class="absolute -left-[27px] md:-left-[31px] top-1.5 w-4 h-4 rounded-full bg-tertiary shadow-[0_0_10px_rgba(78,222,163,0.8)] flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-tertiary tracking-tight">05:30 PM – 06:45 PM</span>
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm uppercase tracking-wide">Meal &amp; Community</span>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all shadow-[0_4px_16px_rgba(0,0,0,0.25)] flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Welcome Dinner &amp; Cabin Group Icebreakers</h3>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">restaurant</span>
+<span>Pine Dining Hall</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Smoked brisket, roasted mountain root vegetables, artisan salads, and gluten-free flatbread station. Meet your cabin counselor and complete team flags.
+                </p>
+<div class="flex items-center gap-space-sm pt-space-xs text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">no_food</span> Allergen safe counters</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">groups</span> All cabins attending</span>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col gap-space-xs group">
+<div class="absolute -left-[27px] md:-left-[31px] top-1.5 w-4 h-4 rounded-full bg-primary-container shadow-[0_0_14px_rgba(139,44,245,1)] flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">07:15 PM – 09:00 PM</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wide">Keynote &amp; Worship</span>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all shadow-[0_4px_16px_rgba(0,0,0,0.25)] flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Opening Rally: 'Living Beyond the Ordinary'</h3>
+<p class="font-label-md text-label-md text-primary mt-0.5">Speaker: Pastor David Ross · Music: Evently Collective</p>
+</div>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-base">stadium</span>
+<span>Amphitheater</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Igniting our 4-day journey into authentic faith, courage, and true calling. Bring your notebook, Bible, and warm layer for sunset cooling.
+                </p>
+<div class="flex items-center gap-space-sm pt-space-xs text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">volume_up</span> Full live band</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">light_mode</span> Blanket rentals free</span>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col gap-space-xs group">
+<div class="absolute -left-[27px] md:-left-[31px] top-1.5 w-4 h-4 rounded-full bg-secondary shadow-[0_0_8px_rgba(215,186,255,0.7)] flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary"></span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-secondary tracking-tight">09:15 PM – 10:30 PM</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wide">Fellowship</span>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all shadow-[0_4px_16px_rgba(0,0,0,0.25)] flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Campfire Acoustic Worship &amp; S'mores Fellowship</h3>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">local_fire_department</span>
+<span>Campfire Pit #1</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Unplugged guitar fellowship under the pine canopy. Gourmet marshmallow, dark chocolate, and graham cracker kits served by the hospitality team.
+                </p>
+</div>
+</div>
+<div class="relative flex flex-col gap-space-xs group">
+<div class="absolute -left-[27px] md:-left-[31px] top-1.5 w-4 h-4 rounded-full bg-outline-variant flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant tracking-tight">11:00 PM</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-outline font-label-sm text-label-sm uppercase tracking-wide">Rest</span>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-low shadow-[0_4px_16px_rgba(0,0,0,0.25)] flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cabin Lights Out &amp; Strict Quiet Hours</h3>
+<div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">bed</span>
+<span>All Cabins</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Counselor check-in complete. Exterior path illumination dims to preserve night-sky observation. Rest well for Day 2 adventures!
+                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="schedule-pane hidden flex flex-col gap-space-md" id="day2">
+<div class="flex items-center justify-between">
+<span class="text-tertiary font-headline-sm text-headline-sm">Friday, Aug 15</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline font-label-sm text-label-sm">Key Theme: Encounter</span>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase">07:00 AM – 08:00 AM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Sunrise Guided Prayer Walk &amp; Lake Meditation</h4>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Shoreline Pier</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase">08:15 AM – 09:30 AM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Hearty Mountain Breakfast &amp; Cabin Devo</h4>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Pine Dining Hall</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase">10:00 AM – 12:00 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Morning Encounter: 'Identity in the Wild'</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">With Guest Mentor Maya Sterling &amp; Worship</p>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Amphitheater</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">01:30 PM – 05:00 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Elective Workshops &amp; Lake Recreation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kayaking, Disc Golf, High Ropes, Art in Nature</p>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Outdoors Campus</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase">07:00 PM – 09:30 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Night of Surrender: Worship &amp; Prayer Circles</h4>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Grand Meadow</span>
+</div>
+</div>
+</div>
+<div class="schedule-pane hidden flex flex-col gap-space-md" id="day3">
+<div class="flex items-center justify-between">
+<span class="text-tertiary font-headline-sm text-headline-sm">Saturday, Aug 16</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline font-label-sm text-label-sm">Key Theme: Adventure &amp; Campfire</span>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase">08:00 AM – 09:15 AM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Lumberjack Breakfast Feast</h4>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Pine Dining Hall</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase">09:45 AM – 01:00 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">The Summit Challenge: Inter-Cabin Games</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Obstacle course, team relay, and riddle trek</p>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Athletic Field</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">05:30 PM – 07:00 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Mountain Cookout BBQ</h4>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Timber Deck</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase">08:00 PM – 10:30 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Grand Bonfire &amp; Testimony Sharing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Special acoustic guest &amp; starlit praise</p>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Campfire Pit #1</span>
+</div>
+</div>
+</div>
+<div class="schedule-pane hidden flex flex-col gap-space-md" id="day4">
+<div class="flex items-center justify-between">
+<span class="text-tertiary font-headline-sm text-headline-sm">Sunday, Aug 17</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-outline font-label-sm text-label-sm">Key Theme: Commissioning</span>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase">07:30 AM – 08:45 AM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Continental Farewell Breakfast &amp; Pack Up</h4>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Pine Dining Hall</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase">09:15 AM – 11:00 AM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Closing Commissioning Service &amp; Anointing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pastor David Ross &amp; Youth Pastoral Staff</p>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Amphitheater</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase">11:30 AM – 01:00 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Luggage Loading, Box Lunches &amp; Departure</h4>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Main Bus Loop</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<div class="p-space-md rounded-2xl bg-surface-container-low shadow-[0_8px_24px_-4px_rgba(0,0,0,0.45)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Camp Map Preview</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">wifi</span>
+              GPS Available
+            </span>
+</div>
+<div class="w-full h-44 rounded-xl bg-cover bg-center overflow-hidden flex items-end p-space-sm relative" data-location="Pinecrest Mountain Retreat, Colorado" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1vTcy5M90qcEx0BaY1hmpNRWlvMbeoLnM43q5Hc_jkh180462X-M8EgjKo8lvP755JVmVxcvJt5bv6NhGi5oXzjbQGSQm6-KoxV8x7E5luYB3D4wX7A2rUJYmY96tg0xkrZSzh4cKvGCzyqPNciiMI5zRZWLfqQ87PVaQWujwv0C-aHUJVToa5xhVIwqW4sfiqWhWvsBgYDckcIjGjoA-Z9O7ZWW_nRjx1OZQxavXoaX1-j4SYdCg')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Pinecrest Summit Map</span>
+<button class="px-space-xs py-1 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm">Full Map</button>
+</div>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Main Lodge · Amphitheater · Cabins A-L</span>
+<span class="text-primary font-medium">10 Min Walk</span>
+</div>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-[0_8px_24px_-4px_rgba(0,0,0,0.45)] flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-28 h-28 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-label-lg text-label-lg font-semibold">First-Timer Tips</span>
+</div>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary mt-1">check</span>
+<span>Keep your lanyard badge on at all dining and workshop sessions.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary mt-1">check</span>
+<span>Hydrate consistently: 5,600 ft elevation increases water needs.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary mt-1">check</span>
+<span>Nighttime temps drop to 52°F; keep a hoodie or fleece handy.</span>
+</li>
+</ul>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-[0_8px_24px_-4px_rgba(0,0,0,0.45)] flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-error">
+<span class="material-symbols-outlined">local_hospital</span>
+<span class="font-label-lg text-label-lg font-semibold">Medical Lodge Station</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Licensed EMTs and youth medical staff are stationed 24/7 next to the Main Lodge Deck.
+          </p>
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Camp Nurse On-Call</span>
+<span class="font-label-md text-label-md text-on-surface">Nurse Sarah Jenkins, RN</span>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-high text-error hover:bg-surface-bright transition-colors" href="tel:5552345678">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-surface-container-lowest py-space-xl" id="camp-essentials">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-lg">
+<div class="flex flex-col gap-1 max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Key Protocols</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Camp Essentials &amp; Guidelines</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Important instructions for maintaining a safe, respectful, and spirit-filled community environment.
+        </p>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="accordion-item rounded-2xl bg-surface-container-low overflow-hidden transition-all shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+<button class="accordion-header w-full px-space-lg py-space-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-container/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">cottage</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Accommodation &amp; Cabin Rules</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Curfew, cleanliness ratings, and quiet hours expectations</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-content hidden px-space-lg pb-space-md pt-space-xs text-on-surface-variant font-body-md border-t border-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">bedtime</span>
+                  Quiet Hours &amp; Curfew
+                </span>
+<p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">
+                  Strict cabin curfew is 11:00 PM nightly. Quiet hours remain in effect until 06:45 AM. Campers may not leave assigned cabins after curfew without a counselor.
+                </p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">cleaning_services</span>
+                  Clean Cabin Cup
+                </span>
+<p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">
+                  Daily bunk inspections at 11:30 AM. Points awarded for made beds, swept floors, and proper gear stowage. Winning cabin receives ice cream party privileges!
+                </p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">devices</span>
+                  Tech &amp; Device Etiquette
+                </span>
+<p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">
+                  Phones are permitted for camp app reference and photography only. Cabins participate in device-free reflection hours between 10:00 PM and 07:00 AM.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="accordion-item rounded-2xl bg-surface-container-low overflow-hidden transition-all shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+<button class="accordion-header w-full px-space-lg py-space-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container/30 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined">restaurant_menu</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Meal Times &amp; Dining Etiquette</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Buffet windows, dietary trays, and Snack Shack operations</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-content hidden px-space-lg pb-space-md pt-space-xs text-on-surface-variant font-body-md border-t border-surface-container">
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1 p-space-sm rounded-xl bg-surface-container">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Standard Buffet Windows</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Breakfast: 08:00 AM – 09:15 AM<br/>
+                    Lunch: 12:30 PM – 01:45 PM<br/>
+                    Dinner: 05:30 PM – 06:45 PM
+                  </p>
+</div>
+<div class="flex flex-col gap-1 p-space-sm rounded-xl bg-surface-container">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Snack Shack &amp; Coffee Corner</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Open daily 02:00 PM – 04:30 PM and 09:30 PM – 10:30 PM. Camp lanyards can be preloaded via registration portal or paid with card.
+                  </p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-outline">
+                * Dietary Notice: All meals clearly label Gluten-Free, Dairy-Free, Nut-Free, and Vegan options. Please inform server staff of severe anaphylactic allergies upon entry.
+              </p>
+</div>
+</div>
+</div>
+<div class="accordion-item rounded-2xl bg-surface-container-low overflow-hidden transition-all shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+<button class="accordion-header w-full px-space-lg py-space-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">kayaking</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recreation &amp; Safety Protocols</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Waterfront rules, high-ropes briefings, and buddy systems</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-content hidden px-space-lg pb-space-md pt-space-xs text-on-surface-variant font-body-md border-t border-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Pinecrest Waterfront &amp; Boats</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Certified lifeguards strictly enforce swim zones (01:30 PM – 05:00 PM). Life vests (PFDs) are mandatory for all paddleboards and canoes, regardless of swimming ability.
+                </p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">High Ropes &amp; Zip Line Course</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Requires 15-minute safety orientation. Closed-toe athletic shoes mandatory. Weight parameters: 65 lbs min, 250 lbs max per mountain harness specifications.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="accordion-item rounded-2xl bg-surface-container-low overflow-hidden transition-all shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+<button class="accordion-header w-full px-space-lg py-space-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error-container/30 text-error flex items-center justify-center">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">What to do in an Emergency</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Evacuation muster points, direct call buttons, and first aid dispatch</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-content hidden px-space-lg pb-space-md pt-space-xs text-on-surface-variant font-body-md border-t border-surface-container">
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-xs">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Emergency Muster Point: Main Soccer Field</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">In case of continuous siren horn, gather with cabin group at your numbered cabin flag pole.</p>
+</div>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-error text-on-error font-label-md text-label-md shadow-md" href="tel:5552345678">
+<span class="material-symbols-outlined">phone_in_talk</span>
+                  Call Camp Desk
+                </a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs pt-space-xs text-body-sm text-on-surface-variant">
+<div>• Nearest Hospital: Summit Regional (18 min)</div>
+<div>• Onsite Defibrillator: Main Lodge Reception</div>
+<div>• Wildfire Watch: Level 1 Low Risk</div>
+</div>
+</div>
+</div>
+</div>
+<div class="accordion-item rounded-2xl bg-surface-container-low overflow-hidden transition-all shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+<button class="accordion-header w-full px-space-lg py-space-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-bright text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Frequently Asked Questions (FAQs)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">WiFi coverage, phone reception notes, and packing weather considerations</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-content hidden px-space-lg pb-space-md pt-space-xs text-on-surface-variant font-body-md border-t border-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Is there WiFi on campus?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Yes, high-speed Starlink WiFi network <code class="text-primary bg-surface-container px-1 py-0.5 rounded">EventlyCamp_Guest</code> covers the Main Lodge, Dining Hall, and Amphitheater. Cabins are intentionally low-signal zones.
+                </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">What cell carriers work at Pinecrest?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Verizon and AT&amp;T maintain 2-3 bars of LTE across the retreat ground. T-Mobile has coverage near the Main Lodge only.
+                </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">What is the weather forecast?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Highs of 78°F during afternoon hours with crisp mountain breezes. Evenings dip into 50–54°F. A light rain jacket is recommended for afternoon mountain showers.
+                </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Lost and Found procedure</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Items left at the Amphitheater or Dining Hall are brought to the Counselor Hospitality Station every evening. Label all water bottles and Bible cases!
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl w-full">
+<div class="p-space-lg md:p-space-xl rounded-2xl bg-surface-container-low shadow-[0_12px_32px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-space-lg relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs max-w-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Need Immediate Assistance?</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Questions During Your Stay?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Visit the Information Counter at the Pine Dining Hall or speak with any volunteer wearing a purple lanyard. We're here to serve you!
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full md:w-auto">
+<a class="flex-1 md:flex-initial inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg bg-surface-container hover:bg-surface-bright text-on-surface transition-colors" href="tel:5552345678">
+<span class="material-symbols-outlined text-base">phone</span>
+          (555) 234-5678
+        </a>
+<a class="flex-1 md:flex-initial inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg bg-primary-container text-on-primary hover:bg-secondary-container hover:text-on-secondary shadow-[0_4px_20px_0_rgba(139,44,245,0.4)] transition-all" data-path="check-registration" href="#">
+<span class="material-symbols-outlined text-base">badge</span>
+          My Camper Pass
+        </a>
+</div>
+</div>
+</section>
+<script>
+    (function initCampGuide() {
+      const tabButtons = document.querySelectorAll('#scheduleTabs .tab-btn');
+      const panes = document.querySelectorAll('.schedule-pane');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetId = button.getAttribute('data-target');
+          if (!targetId) return;
+
+          tabButtons.forEach(btn => {
+            btn.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-[0_2px_12px_rgba(139,44,245,0.35)]');
+            btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          });
+
+          button.classList.add('bg-primary-container', 'text-on-primary', 'shadow-[0_2px_12px_rgba(139,44,245,0.35)]');
+          button.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+
+          panes.forEach(pane => {
+            if (pane.id === targetId) {
+              pane.classList.remove('hidden');
+            } else {
+              pane.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      const accordions = document.querySelectorAll('.accordion-item');
+      accordions.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        const icon = item.querySelector('.accordion-icon');
+
+        header.addEventListener('click', () => {
+          const isOpen = !content.classList.contains('hidden');
+
+          accordions.forEach(other => {
+            other.querySelector('.accordion-content').classList.add('hidden');
+            const otherIcon = other.querySelector('.accordion-icon');
+            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+          });
+
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          } else {
+            content.classList.add('hidden');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+
+      if (accordions.length > 0) {
+        const firstContent = accordions[0].querySelector('.accordion-content');
+        const firstIcon = accordions[0].querySelector('.accordion-icon');
+        if (firstContent) firstContent.classList.remove('hidden');
+        if (firstIcon) firstIcon.style.transform = 'rotate(180deg)';
+      }
+
+      const downloadPdf = document.getElementById('downloadPdfBtn');
+      if (downloadPdf) {
+        downloadPdf.addEventListener('click', () => {
+          window.print();
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant shadow-[0_-1px_12px_rgba(0,0,0,0.45)] mt-space-xl"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="Evently Camp Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WEOVUZUiwRc3CImxryQYfVjlumSQwBNsgAfhrPeffTF7zLOIZsTrDTxiXfrLy3oWHL72dKy7L-KsJvP0Yb4PWWVnjoki1QNNvrMIU2Zri4xdI8yduZ-5v8zzB0mfR_7WYI1Ot1ebn-Hx9YmKjTYXVfutrusvIyn8sUCG3Ww6tsPUX_GGOn5-gX_6Q7Ngfa_Sx7lSysCjbiCEIXetgsBVwRt_Mm1AO-4pJt7qEu9oHfxcEFkmOb_5qY-zs"/><span class="font-headline-sm text-headline-sm text-on-surface">Evently Camp</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Dedicated fellowship retreat and camp preparation platform. Cultivating spirit, connection, and community across generations.</p><div class="pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Venue</span><p class="font-body-sm text-body-sm text-on-surface">Timber Creek Retreat Center · Pine Ridge Summit, CO</p></div></div><div class="md:col-span-4 flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Church Contact &amp; Support</span><p class="font-body-sm text-body-sm text-on-surface">Grace Community Youth Ministry</p><p class="font-body-sm text-body-sm text-on-surface-variant">Questions: info@eventlycamp.org</p><p class="font-body-sm text-body-sm text-on-surface-variant">Urgent Helpdesk: (555) 349-2811</p></div><div class="md:col-span-3 flex flex-col items-start md:items-end justify-between gap-space-md"><div class="flex flex-col md:items-end gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Administration</span><a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-primary hover:text-on-surface hover:bg-surface-container-high px-space-md py-space-xs rounded-lg transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-base">lock</span>Organizer Portal</a></div><p class="font-body-sm text-body-sm text-outline">© 2025 Evently Camp. All rights reserved.</p></div></div></div></footer></body></html>

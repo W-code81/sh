@@ -1,0 +1,7 @@
+packages:
+  - client
+  - admin/shift-admin
+
+allowBuilds:
+  sharp: false
+  unrs-resolver: false

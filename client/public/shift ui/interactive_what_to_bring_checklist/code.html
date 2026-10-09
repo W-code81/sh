@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline-variant":"#4c4355","background":"#14121a","surface-container-low":"#1d1a22","surface-bright":"#3b3840","on-surface-variant":"#cec2d8","on-tertiary-fixed-variant":"#005236","on-primary-container":"#f2e3ff","surface-container-high":"#2b2931","on-tertiary-fixed":"#002113","inverse-on-surface":"#322f37","surface-container":"#211e26","on-primary":"#450086","tertiary-container":"#007751","on-error":"#690005","surface-container-lowest":"#0f0d14","secondary-container":"#5a2a9c","tertiary-fixed":"#6ffbbe","surface-dim":"#14121a","error-container":"#93000a","primary":"#d8b9ff","on-secondary-fixed-variant":"#5a2a9c","secondary-fixed":"#eddcff","surface-variant":"#36333c","on-surface":"#e7e0eb","inverse-surface":"#e7e0eb","tertiary":"#4edea3","on-secondary-container":"#c9a4ff","on-tertiary":"#003824","surface":"#14121a","on-secondary-fixed":"#280056","on-secondary":"#430684","surface-tint":"#d8b9ff","primary-fixed":"#eddcff","on-primary-fixed-variant":"#6300bb","secondary":"#d7baff","on-error-container":"#ffdad6","outline":"#978da1","primary-container":"#8b2cf5","surface-container-highest":"#36333c","inverse-primary":"#8018ea","on-background":"#e7e0eb","on-primary-fixed":"#290055","error":"#ffb4ab","on-tertiary-container":"#83ffc6","primary-fixed-dim":"#d8b9ff","tertiary-fixed-dim":"#4edea3","secondary-fixed-dim":"#d7baff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter-mobile":"1rem","gutter":"1.5rem","space-xl":"2.5rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1.25rem","space-lg":"1.5rem","space-md":"1rem"},fontFamily:{"headline-md":["Outfit"],"headline-sm":["Outfit"],"label-lg":["Inter"],"body-sm":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-lg-mobile":["Outfit"],"headline-xl":["Outfit"],"headline-lg":["Outfit"],"label-md":["Inter"],"headline-xl-mobile":["Outfit"]},fontSize:{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-lg":["15px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl-mobile":["34px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-20 max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Evently Camp Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WEOVUZUiwRc3CImxryQYfVjlumSQwBNsgAfhrPeffTF7zLOIZsTrDTxiXfrLy3oWHL72dKy7L-KsJvP0Yb4PWWVnjoki1QNNvrMIU2Zri4xdI8yduZ-5v8zzB0mfR_7WYI1Ot1ebn-Hx9YmKjTYXVfutrusvIyn8sUCG3Ww6tsPUX_GGOn5-gX_6Q7Ngfa_Sx7lSysCjbiCEIXetgsBVwRt_Mm1AO-4pJt7qEu9oHfxcEFkmOb_5qY-zs"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Evently Camp</span></div><nav class="hidden md:flex items-center gap-space-sm" data-active-classes="bg-surface-container text-primary font-label-lg text-label-lg rounded-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"><a class="px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="camp-overview" href="#">About Camp</a><a aria-current="page" class="px-space-md py-space-sm transition-all bg-surface-container text-primary font-label-lg text-label-lg rounded-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]" data-path="camp-guide" href="#">Camp Guide</a><a class="px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="check-registration" href="#">Check My Registration</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-xl font-headline-sm text-label-lg text-on-primary bg-primary-container hover:bg-secondary-container hover:text-on-secondary shadow-[0_4px_20px_0_rgba(139,44,245,0.4)] transition-all active:scale-[0.98]" data-path="registration" href="#">Register Now</a></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-18rem)]"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-primary-container/15 blur-[120px] pointer-events-none rounded-full"></div>
+<div class="absolute top-48 right-[-100px] w-[360px] h-[360px] bg-tertiary-container/10 blur-[90px] pointer-events-none rounded-full"></div>
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl relative z-10">
+<!-- Header Section with Heroic Greeting & Atmosphere -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-tertiary tracking-wide uppercase">Summit Pack Guide • 48°F Mountain Forecast</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+            Let's get you camp-ready, <span class="text-primary font-headline-xl">Alex</span>.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Interactive packing checklist tailored for mountain camp weather and activities. Progress saves automatically in your browser session.
+          </p>
+</div>
+<!-- Global Fast Controls -->
+<div class="flex items-center gap-space-sm self-start md:self-auto shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-primary-container bg-surface-container-high hover:bg-surface-container-highest transition-all shadow-sm active:scale-95" id="mark-all-btn" type="button">
+<span class="material-symbols-outlined text-lg text-primary">done_all</span>
+<span>Mark all packed</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface bg-surface-container-low hover:bg-surface-container-high transition-all active:scale-95" id="reset-checklist-btn" type="button">
+<span class="material-symbols-outlined text-lg">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+</section>
+<!-- Main Layout: Progress Dashboard + Category Deck + Highlights -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Master Tracker & Categorized Checklist Accordions -->
+<main class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Interactive Progress Hub Card -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-xl relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row items-center gap-space-lg">
+<!-- Radial Meter (SVG Dynamic Gauge) -->
+<div class="relative w-32 h-32 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest fill-none" cx="50" cy="50" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary fill-none transition-all duration-700 ease-out" cx="50" cy="50" id="radial-progress-circle" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="118.06" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight" id="stat-percent">53%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Packed</span>
+</div>
+</div>
+<!-- Metrics & Context -->
+<div class="flex flex-col gap-space-xs flex-1 text-center sm:text-left w-full">
+<div class="flex items-center justify-between">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight" id="stat-count">9</span>
+<span class="font-body-md text-body-md text-on-surface-variant">of <span id="stat-total">17</span> items packed</span>
+</div>
+<span class="hidden sm:inline-flex px-space-sm py-space-xs rounded-full bg-secondary-container font-label-sm text-label-sm text-on-secondary-container" id="pacing-badge">
+                    In Progress
+                  </span>
+</div>
+<!-- Smooth Horizontal Bar Indicator -->
+<div class="w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden mt-space-xs">
+<div class="h-full bg-gradient-to-r from-primary-container via-primary to-tertiary transition-all duration-500 rounded-full" id="linear-progress-bar" style="width: 53%;"></div>
+</div>
+<!-- Live Dynamic Encouragement Prompt -->
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-center sm:justify-start gap-space-xs mt-space-xs" id="motivational-message">
+<span class="material-symbols-outlined text-base text-tertiary">arrow_back_ios_new</span>
+<span>Over halfway there! Don't forget your sleeping bag.</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Accordion Group Container -->
+<div class="flex flex-col gap-space-md" id="packing-categories">
+<!-- Category 1: Clothing -->
+<section class="category-block rounded-xl bg-surface-container shadow-md transition-all duration-300" data-cat-id="clothing">
+<button class="category-toggle w-full px-space-lg py-space-md flex items-center justify-between text-left rounded-xl hover:bg-surface-container-high transition-colors" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">apparel</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Clothing &amp; Mountain Layers</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant cat-status">3 of 5 packed</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-20 hidden sm:block h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="cat-mini-bar h-full bg-primary transition-all duration-300" style="width: 60%"></div>
+</div>
+<span class="toggle-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</div>
+</button>
+<div class="category-items px-space-lg pb-space-md flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Warm hoodie or fleece jacket</span>
+<span class="font-body-sm text-body-sm text-outline">Mountain evenings drop to 48°F during summit worship</span>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Sturdy closed-toe hiking shoes or sneakers</span>
+<span class="font-body-sm text-body-sm text-outline">Required for trails, ropes course, and obstacle relays</span>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Athletic clothes for recreation and field games</span>
+<span class="font-body-sm text-body-sm text-outline">Quick-drying t-shirts, active shorts, and socks</span>
+</div>
+</label>
+<!-- Item 4 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Clean change of clothes (4 days, 3 nights)</span>
+<span class="font-body-sm text-body-sm text-outline">Include 1 extra casual outfit just in case</span>
+</div>
+</label>
+<!-- Item 5 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Rain jacket or poncho</span>
+<span class="font-body-sm text-body-sm text-outline">Afternoon mountain showers are frequent</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Category 2: Personal Essentials & Toiletries -->
+<section class="category-block rounded-xl bg-surface-container shadow-md transition-all duration-300" data-cat-id="toiletries">
+<button class="category-toggle w-full px-space-lg py-space-md flex items-center justify-between text-left rounded-xl hover:bg-surface-container-high transition-colors" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">sanitizer</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Personal Essentials &amp; Toiletries</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant cat-status">3 of 4 packed</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-20 hidden sm:block h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="cat-mini-bar h-full bg-primary transition-all duration-300" style="width: 75%"></div>
+</div>
+<span class="toggle-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</div>
+</button>
+<div class="category-items px-space-lg pb-space-md flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Toothbrush, toothpaste, and biodegradable body wash</span>
+<span class="font-body-sm text-body-sm text-outline">Eco-friendly soaps protect Pine Ridge drainage basins</span>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Quick-dry bath towel &amp; washcloth</span>
+<span class="font-body-sm text-body-sm text-outline">Microfiber dries faster in cool cabin air</span>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Reusable water bottle</span>
+<span class="font-body-sm text-body-sm text-outline">Electrolyte &amp; spring refill stations located around grounds</span>
+</div>
+</label>
+<!-- Item 4 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Sunscreen (SPF 30+) and bug spray</span>
+<span class="font-body-sm text-body-sm text-outline">High altitude UV exposure increases sunburn potential</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Category 3: Sleeping & Cabin Comfort -->
+<section class="category-block rounded-xl bg-surface-container shadow-md transition-all duration-300" data-cat-id="cabin">
+<button class="category-toggle w-full px-space-lg py-space-md flex items-center justify-between text-left rounded-xl hover:bg-surface-container-high transition-colors" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">bed</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Sleeping &amp; Cabin Comfort</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant cat-status">1 of 3 packed</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-20 hidden sm:block h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="cat-mini-bar h-full bg-primary transition-all duration-300" style="width: 33%"></div>
+</div>
+<span class="toggle-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</div>
+</button>
+<div class="category-items px-space-lg pb-space-md flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Pillow with pillowcase</span>
+<span class="font-body-sm text-body-sm text-outline">Standard cabin bunks do not provide personal pillows</span>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Warm sleeping bag or twin bed sheets + heavy blanket</span>
+<span class="font-body-sm text-body-sm text-outline">Cabins feature vinyl mattress covers. Rated 40°F recommended</span>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Compact flashlight or headlamp with extra batteries</span>
+<span class="font-body-sm text-body-sm text-outline">Crucial for nocturnal walkway navigation and stargazing devotionals</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Category 4: Faith & Fellowship -->
+<section class="category-block rounded-xl bg-surface-container shadow-md transition-all duration-300" data-cat-id="faith">
+<button class="category-toggle w-full px-space-lg py-space-md flex items-center justify-between text-left rounded-xl hover:bg-surface-container-high transition-colors" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Faith &amp; Fellowship</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant cat-status">2 of 3 packed</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-20 hidden sm:block h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="cat-mini-bar h-full bg-primary transition-all duration-300" style="width: 66%"></div>
+</div>
+<span class="toggle-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</div>
+</button>
+<div class="category-items px-space-lg pb-space-md flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Physical Bible</span>
+<span class="font-body-sm text-body-sm text-outline">Cell service is minimal; printed scripture recommended for small groups</span>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input checked="" class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Journal / notebook and pen for breakout sessions</span>
+<span class="font-body-sm text-body-sm text-outline">For sermon takeaways, prayer intentions, and peer encouragement</span>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Camp theme lanyard &amp; name tag</span>
+<span class="font-body-sm text-body-sm text-outline">Issued at check-in desk on arrival day</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Category 5: Important Documents & Health -->
+<section class="category-block rounded-xl bg-surface-container shadow-md transition-all duration-300" data-cat-id="docs">
+<button class="category-toggle w-full px-space-lg py-space-md flex items-center justify-between text-left rounded-xl hover:bg-surface-container-high transition-colors" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">medical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Important Documents &amp; Health</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant cat-status">0 of 2 packed</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-20 hidden sm:block h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="cat-mini-bar h-full bg-primary transition-all duration-300" style="width: 0%"></div>
+</div>
+<span class="toggle-icon material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</div>
+</button>
+<div class="category-items px-space-lg pb-space-md flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Signed health form / proof of insurance</span>
+<span class="font-body-sm text-body-sm text-outline">Mandatory for all attendees under 18; verified by camp nurse</span>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="group flex items-start gap-space-md p-space-sm rounded-xl cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="checklist-item mt-1 w-5 h-5 rounded-md appearance-none shrink-0 bg-surface-container-highest checked:bg-tertiary transition-all cursor-pointer relative checked:before:content-['✓'] checked:before:absolute checked:before:inset-0 checked:before:flex checked:before:items-center checked:before:justify-center checked:before:text-on-tertiary checked:before:text-xs checked:before:font-bold" type="checkbox"/>
+<div class="flex flex-col select-none">
+<span class="item-label font-body-md text-body-md text-on-surface group-has-[:checked]:line-through group-has-[:checked]:text-outline transition-colors">Personal daily prescription medications</span>
+<span class="font-body-sm text-body-sm text-outline">Must be kept in original pharmaceutical containers with dosage directions</span>
+</div>
+</label>
+</div>
+</section>
+</div>
+</main>
+<!-- Right Column: Highlight Card + Weather Widget + Direct Portal Links -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Special Highlight Card: Most Forgotten Items -->
+<div class="rounded-xl bg-surface-container-high p-space-lg shadow-xl relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary-container/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<span class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xl">priority_high</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Leader Advice</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Top 3 Forgotten Items</h3>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Every season, over 40% of attendees arrive without these vital essentials:
+            </p>
+<ul class="flex flex-col gap-space-sm">
+<li class="flex items-start gap-space-md p-space-sm rounded-lg bg-surface-container-low/70">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center shrink-0 mt-0.5">1</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Flashlight or headlamp</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mountain paths between firepit &amp; cabins have no streetlights.</p>
+</div>
+</li>
+<li class="flex items-start gap-space-md p-space-sm rounded-lg bg-surface-container-low/70">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center shrink-0 mt-0.5">2</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Warm extra wool socks</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Morning grass dew soaks shoes immediately; dry feet are key.</p>
+</div>
+</li>
+<li class="flex items-start gap-space-md p-space-sm rounded-lg bg-surface-container-low/70">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center shrink-0 mt-0.5">3</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Reusable insulated water bottle</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High elevation dehydrates twice as quickly as sea level.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Mountain Environmental Snapshot Card -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-tertiary">terrain</span>
+<span class="font-headline-sm text-headline-sm">Pine Ridge Camp Site</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant">Elevation 7,850 ft</span>
+</div>
+<div class="h-32 rounded-xl relative overflow-hidden my-space-xs">
+<div class="w-full h-full bg-cover bg-center" data-alt="Dramatic misty pine tree forest at mountain summit during dusky purple twilight with subtle soft campfire ambient glow in the distant clearing, cinematic atmospheric lighting, moody plum tones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3yWO0FNIWpv2tlFCVMC67fICDw-Zowgv5qbzyUhHkvC1gyF9bcZFENN3UA19HAYPrGLXdLCk5pl8xvPFH_rIHDtfHR2B5re2kRJPdqw-k4AN13EaUV0E4Q0BH2_K2tluXD5ZqX0bTwukW4TW0CiC5-RqucK0pvY4TYHkEUlXNQLn0SFEc5BfMCqmkl2DnkDNGbU4_d2SYAUmjhuLi1bJJYUO-pumI8NF3blk2EW7s3ysIwrZ65POO')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent flex items-end p-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">ac_unit</span>
+                  Expected Night Temp: 48°F · Clear Skies
+                </span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Timber Creek cabins have electrical wall outlets, but unheated sleeping quarters. Bundle up for restful nights.
+            </p>
+</div>
+<!-- Bottom Navigation Links Panel -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline mb-space-xs">Helpful Camp Links</span>
+<a class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest transition-all group" data-path="camp-guide" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="font-label-lg text-label-lg text-on-surface">View Camp Schedule</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest transition-all group" data-path="camp-overview" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">alt_route</span>
+<span class="font-label-lg text-label-lg text-on-surface">Directions to Pine Ridge</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-high hover:bg-surface-container-highest transition-all group" data-path="check-registration" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">badge</span>
+<span class="font-label-lg text-label-lg text-on-surface">Check My Registration</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<script>
+    (function initPackingChecklist() {
+      const STORAGE_KEY = 'evently_camp_packing_alex_v1';
+      const checkboxes = Array.from(document.querySelectorAll('.checklist-item'));
+      const statCount = document.getElementById('stat-count');
+      const statTotal = document.getElementById('stat-total');
+      const statPercent = document.getElementById('stat-percent');
+      const linearBar = document.getElementById('linear-progress-bar');
+      const radialCircle = document.getElementById('radial-progress-circle');
+      const motivationalMsg = document.getElementById('motivational-message');
+      const pacingBadge = document.getElementById('pacing-badge');
+      const markAllBtn = document.getElementById('mark-all-btn');
+      const resetBtn = document.getElementById('reset-checklist-btn');
+
+      const CIRCUMFERENCE = 251.2;
+
+      // Collapsible category accordions
+      document.querySelectorAll('.category-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+          const block = button.closest('.category-block');
+          const itemsContainer = block.querySelector('.category-items');
+          const toggleIcon = button.querySelector('.toggle-icon');
+
+          if (itemsContainer.classList.contains('hidden')) {
+            itemsContainer.classList.remove('hidden');
+            toggleIcon.classList.remove('-rotate-90');
+          } else {
+            itemsContainer.classList.add('hidden');
+            toggleIcon.classList.add('-rotate-90');
+          }
+        });
+      });
+
+      function updateCategoryMetrics() {
+        document.querySelectorAll('.category-block').forEach(cat => {
+          const catChecks = Array.from(cat.querySelectorAll('.checklist-item'));
+          const totalInCat = catChecks.length;
+          const packedInCat = catChecks.filter(c => c.checked).length;
+          const statusText = cat.querySelector('.cat-status');
+          const miniBar = cat.querySelector('.cat-mini-bar');
+
+          if (statusText) statusText.textContent = `${packedInCat} of ${totalInCat} packed`;
+          if (miniBar) {
+            const pct = Math.round((packedInCat / totalInCat) * 100);
+            miniBar.style.width = `${pct}%`;
+          }
+        });
+      }
+
+      function updateDashboard() {
+        const total = checkboxes.length;
+        const packed = checkboxes.filter(c => c.checked).length;
+        const pct = Math.round((packed / total) * 100);
+
+        if (statCount) statCount.textContent = packed;
+        if (statTotal) statTotal.textContent = total;
+        if (statPercent) statPercent.textContent = `${pct}%`;
+
+        // Update linear bar
+        if (linearBar) {
+          linearBar.style.width = `${pct}%`;
+        }
+
+        // Update radial circle offset
+        if (radialCircle) {
+          const offset = CIRCUMFERENCE - (pct / 100) * CIRCUMFERENCE;
+          radialCircle.style.strokeDashoffset = offset;
+        }
+
+        // Dynamic status badge
+        if (pacingBadge) {
+          if (packed === total) {
+            pacingBadge.textContent = 'Ready for Camp!';
+            pacingBadge.className = 'inline-flex px-space-sm py-space-xs rounded-full bg-tertiary-container font-label-sm text-label-sm text-on-tertiary-container';
+          } else if (packed >= 9) {
+            pacingBadge.textContent = 'Great Momentum';
+            pacingBadge.className = 'inline-flex px-space-sm py-space-xs rounded-full bg-secondary-container font-label-sm text-label-sm text-on-secondary-container';
+          } else {
+            pacingBadge.textContent = 'Packing Started';
+            pacingBadge.className = 'inline-flex px-space-sm py-space-xs rounded-full bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant';
+          }
+        }
+
+        // Dynamic encouragement message
+        if (motivationalMsg) {
+          if (packed === total) {
+            motivationalMsg.innerHTML = '<span class="material-symbols-outlined text-base text-tertiary">verified</span><span>Hooray Alex! You are 100% prepared for Pine Ridge Retreat.</span>';
+          } else if (packed >= 14) {
+            motivationalMsg.innerHTML = '<span class="material-symbols-outlined text-base text-tertiary">hiking</span><span>Almost complete! Just a few cabin and document items left.</span>';
+          } else if (packed >= 9) {
+            motivationalMsg.innerHTML = '<span class="material-symbols-outlined text-base text-tertiary">sparkles</span><span>Over halfway there! Don&rsquo;t forget your sleeping bag.</span>';
+          } else if (packed > 0) {
+            motivationalMsg.innerHTML = '<span class="material-symbols-outlined text-base text-primary">backpack</span><span>Off to a good start! Mountain nights get cold, pack warm clothes first.</span>';
+          } else {
+            motivationalMsg.innerHTML = '<span class="material-symbols-outlined text-base text-outline">info</span><span>Tap items as you pack your bag to track readiness.</span>';
+          }
+        }
+
+        updateCategoryMetrics();
+      }
+
+      // Checkbox state listener
+      checkboxes.forEach((box, index) => {
+        box.addEventListener('change', () => {
+          updateDashboard();
+        });
+      });
+
+      // Global Actions
+      if (markAllBtn) {
+        markAllBtn.addEventListener('click', () => {
+          checkboxes.forEach(c => c.checked = true);
+          updateDashboard();
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          checkboxes.forEach(c => c.checked = false);
+          updateDashboard();
+        });
+      }
+
+      // Initial compute
+      updateDashboard();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant shadow-[0_-1px_12px_rgba(0,0,0,0.45)] mt-space-xl"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="Evently Camp Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WEOVUZUiwRc3CImxryQYfVjlumSQwBNsgAfhrPeffTF7zLOIZsTrDTxiXfrLy3oWHL72dKy7L-KsJvP0Yb4PWWVnjoki1QNNvrMIU2Zri4xdI8yduZ-5v8zzB0mfR_7WYI1Ot1ebn-Hx9YmKjTYXVfutrusvIyn8sUCG3Ww6tsPUX_GGOn5-gX_6Q7Ngfa_Sx7lSysCjbiCEIXetgsBVwRt_Mm1AO-4pJt7qEu9oHfxcEFkmOb_5qY-zs"/><span class="font-headline-sm text-headline-sm text-on-surface">Evently Camp</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Dedicated fellowship retreat and camp preparation platform. Cultivating spirit, connection, and community across generations.</p><div class="pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Venue</span><p class="font-body-sm text-body-sm text-on-surface">Timber Creek Retreat Center · Pine Ridge Summit, CO</p></div></div><div class="md:col-span-4 flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Church Contact &amp; Support</span><p class="font-body-sm text-body-sm text-on-surface">Grace Community Youth Ministry</p><p class="font-body-sm text-body-sm text-on-surface-variant">Questions: info@eventlycamp.org</p><p class="font-body-sm text-body-sm text-on-surface-variant">Urgent Helpdesk: (555) 349-2811</p></div><div class="md:col-span-3 flex flex-col items-start md:items-end justify-between gap-space-md"><div class="flex flex-col md:items-end gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Administration</span><a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-primary hover:text-on-surface hover:bg-surface-container-high px-space-md py-space-xs rounded-lg transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-base">lock</span>Organizer Portal</a></div><p class="font-body-sm text-body-sm text-outline">© 2025 Evently Camp. All rights reserved.</p></div></div></div></footer></body></html>

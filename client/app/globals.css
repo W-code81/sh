@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+
+  /* Core surfaces */
+  --background: #14121a;
+  --surface: #14121a;
+  --surface-container-lowest: #0f0d14;
+  --surface-container-low: #1d1a22;
+  --surface-container: #211e26;
+  --surface-container-high: #2b2931;
+  --surface-container-highest: #36333c;
+  --surface-bright: #3b3840;
+  --surface-variant: #36333c;
+
+  /* Text and structure */
+  --foreground: #e7e0eb;
+  --on-background: #e7e0eb;
+  --on-surface-variant: #cec2d8;
+  --outline: #978da1;
+  --outline-variant: #4c4355;
+
+  /* Brand and status colors */
+  --primary: #d8b9ff;
+  --primary-container: #8b2cf5;
+  --on-primary: #450086;
+  --on-primary-container: #f2e3ff;
+  --secondary: #d7baff;
+  --on-secondary: #430684;
+  --secondary-container: #5a2a9c;
+  --on-secondary-container: #c9a4ff;
+  --tertiary: #4edea3;
+  --on-tertiary: #003824;
+  --tertiary-container: #007751;
+  --on-tertiary-container: #83ffc6;
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+
+  --font-geist-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-geist-mono: ui-monospace, SFMono-Regular, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-variant: var(--surface-variant);
+
+  --color-foreground: var(--foreground);
+  --color-on-background: var(--on-background);
+  --color-on-surface: var(--foreground);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-card: 1.25rem;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
