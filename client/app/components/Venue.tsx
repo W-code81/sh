@@ -7,7 +7,7 @@ const mapUrl =
 export default function Venue() {
   return (
     <section aria-labelledby="venue-title" className="mx-auto w-full max-w-7xl px-5 pb-14 md:px-8 md:pb-20">
-      <div className="group relative isolate min-h-100 overflow-hidden rounded-3xl border border-outline-variant/35 bg-surface-container-low sm:min-h-120">
+      <div data-scroll-reveal className="group relative isolate min-h-100 overflow-hidden rounded-3xl border border-outline-variant/35 bg-surface-container-low sm:min-h-120">
         <Image
           src="/images/venue.png"
           alt="Royal Girls Academy grounds in Ozuoba"

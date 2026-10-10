@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
     { label: "About Camp", href: "/about-camp" },
@@ -22,8 +23,8 @@ export default function Navbar() {
         }`;
 
     return (
-        <header className="sticky top-0 z-50 border-b border-outline-variant/30 bg-surface-container-lowest/85 shadow-[0_1px_8px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 md:px-8">
+        <header className="sticky top-0 z-50 border-b border-outline-variant/70 bg-surface-container-lowest/95 shadow-[0_1px_6px_rgba(10,5,16,0.14)] backdrop-blur-xl">
+            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-5 md:px-8">
 
                 {/* LOGO */}
                 <Logo/>
@@ -42,11 +43,12 @@ export default function Navbar() {
                     ))}
                 </nav>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1 sm:gap-3">
+                    <ThemeToggle />
                     {/* REGISTER BTN */}
                     <Link
                         href="/register"
-                        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary-container px-5 py-2.5 text-sm font-semibold text-on-primary-container shadow-[0_4px_20px_rgba(139,44,245,0.35)] transition hover:bg-secondary-container focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:scale-[0.98]"
+                        className="inline-flex min-h-10 items-center justify-center rounded-lg bg-primary-container px-2 py-2 text-xs font-semibold text-on-primary-container shadow-[0_4px_16px_rgba(139,44,245,0.24)] transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:scale-[0.98] sm:min-h-11 sm:px-5 sm:py-2.5 sm:text-sm max-[380px]:px-1.5"
                     >
                         Register <span className="hidden sm:inline px-1"> Now</span>
                     </Link>
@@ -58,7 +60,7 @@ export default function Navbar() {
                         aria-expanded={menuOpen}
                         aria-controls="mobile-navigation"
                         onClick={() => setMenuOpen((open) => !open)}
-                        className="flex size-11 items-center justify-center rounded-xl border border-outline-variant/60 text-on-surface-variant transition hover:bg-surface-container-high hover:text-on-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hidden"
+                        className="flex size-9 items-center justify-center rounded-xl border border-outline-variant/60 text-on-surface-variant transition hover:bg-surface-container-high hover:text-on-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:size-11 md:hidden max-[380px]:size-8"
                     >
                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-5">
                             {menuOpen ? (
