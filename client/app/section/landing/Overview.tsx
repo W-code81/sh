@@ -35,7 +35,7 @@ export default function Overview() {
       id="highlights"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <header className="mb-8 flex flex-col gap-3 sm:mb-10 md:flex-row md:items-end md:justify-between">
+        <header data-scroll-reveal className="mb-8 flex flex-col gap-3 sm:mb-10 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary sm:text-sm">
               Key details
@@ -52,7 +52,7 @@ export default function Overview() {
           </p>
         </header>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+        <div data-scroll-stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {details.map(({ label, title, description, icon: Icon }) => (
             <article
               key={title}

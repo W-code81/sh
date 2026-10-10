@@ -61,6 +61,7 @@ export default function EssentialInfo() {
                         Camp essentials
                     </p>
                     <h2
+                        data-scroll-reveal
                         className="mt-3 max-w-lg text-3xl font-bold leading-tight tracking-tight text-on-surface sm:text-4xl"
                         id="essential-info-title"
                     >
@@ -71,7 +72,7 @@ export default function EssentialInfo() {
                         should know.
                     </p>
 
-                    <aside className="mt-7 flex gap-4 rounded-2xl border border-outline-variant/40 bg-surface-container-low p-4 sm:p-5">
+                    <aside data-scroll-reveal className="mt-7 flex gap-4 rounded-2xl border border-outline-variant/40 bg-surface-container-low p-4 sm:p-5">
                         <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-container/20 text-primary">
                             <HeartPulse aria-hidden="true" className="size-5" />
                         </span>
@@ -87,7 +88,7 @@ export default function EssentialInfo() {
                     </aside>
                 </div>
 
-                <div className="space-y-3">
+                <div data-scroll-stagger className="space-y-3">
                     {information.map(({ icon: Icon, title, summary, details }, index) => (
                         <details
                             className="group overflow-hidden rounded-2xl border border-outline-variant/45 bg-surface-container-low transition-colors open:border-primary/35"

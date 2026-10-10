@@ -51,7 +51,7 @@ export default function Expectation() {
       className="w-full bg-surface-container-lowest/60 py-14 md:py-20"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <header className="mx-auto mb-9 max-w-2xl text-center md:mb-12">
+        <header data-scroll-reveal className="mx-auto mb-9 max-w-2xl text-center md:mb-12">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary sm:text-sm">
             The retreat journey
           </p>
@@ -66,7 +66,7 @@ export default function Expectation() {
           </p>
         </header>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:gap-5">
+        <div data-scroll-stagger className="grid gap-4 sm:grid-cols-2 lg:gap-5">
           {expectations.map(({ title, description, focus, icon: Icon, imageSrc, imageAlt, highlight }) => (
             <article
               key={title}
