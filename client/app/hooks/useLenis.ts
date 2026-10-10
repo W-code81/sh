@@ -9,22 +9,41 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function useLenis() {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.4,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let lenis: Lenis | null = null;
+    let unsubscribe: (() => void) | undefined;
+    const tick = (time: number) => lenis?.raf(time * 1000);
 
-    const unsubscribe = lenis.on("scroll", ScrollTrigger.update);
-    const tick = (time: number) => lenis.raf(time * 1000);
+    const start = () => {
+      if (motionPreference.matches || lenis) return;
 
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
+      lenis = new Lenis({
+        duration: 1.4,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+      unsubscribe = lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add(tick);
+      gsap.ticker.lagSmoothing(0);
+    };
+
+    const stop = () => {
+      if (!lenis) return;
+
+      gsap.ticker.remove(tick);
+      unsubscribe?.();
+      lenis.destroy();
+      lenis = null;
+      unsubscribe = undefined;
+    };
+
+    const updateMotion = () => (motionPreference.matches ? stop() : start());
+    start();
+    motionPreference.addEventListener("change", updateMotion);
 
     return () => {
-      gsap.ticker.remove(tick);
-      unsubscribe();
-      lenis.destroy();
+      motionPreference.removeEventListener("change", updateMotion);
+      stop();
     };
   }, []);
 }
