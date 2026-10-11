@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-    { label: "About Camp", href: "/about-camp" },
+    { label: "About Camp", href: "/" },
     { label: "Camp Guide", href: "/camp-guide" },
     { label: "Check My Registration", href: "/check-registration" },
 ];
