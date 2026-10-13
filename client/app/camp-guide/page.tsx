@@ -1,7 +1,12 @@
+import { Suspense } from "react";
+import CampFlow from "./CampFlow";
+import Loading from "../components/Loading";
+
+
 export default function CampGuide() {
-  return (
-   <>
-    <h1 className="text-7xl">CAMP GUIDE</h1>
-   </>
+   return (
+    <Suspense fallback={<Loading />}>
+      <CampFlow/>
+    </Suspense>
   );
 }
