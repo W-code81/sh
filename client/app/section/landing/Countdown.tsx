@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import { gsap } from "gsap";
 
-const CAMP_START = new Date("2026-12-17T00:00:00+01:00").getTime();
+const CAMP_START = new Date("2026-12-15T00:00:00+01:00").getTime();
+let countdownSnapshot: number | null = null;
 
 type TimeLeft = {
   days: number;
@@ -12,9 +13,28 @@ type TimeLeft = {
   seconds: number;
 };
 
-function getTimeLeft(): TimeLeft {
-  const totalSeconds = Math.max(0, Math.floor((CAMP_START - Date.now()) / 1000));
+function getSecondsRemaining(): number {
+  return Math.max(0, Math.floor((CAMP_START - Date.now()) / 1000));
+}
 
+function subscribeToCountdown(onChange: () => void) {
+  const interval = window.setInterval(() => {
+    countdownSnapshot = getSecondsRemaining();
+    onChange();
+  }, 1_000);
+  return () => window.clearInterval(interval);
+}
+
+function getCountdownSnapshot(): number {
+  countdownSnapshot ??= getSecondsRemaining();
+  return countdownSnapshot;
+}
+
+function getServerCountdownSnapshot(): null {
+  return null;
+}
+
+function toTimeLeft(totalSeconds: number): TimeLeft {
   return {
     days: Math.floor(totalSeconds / 86_400),
     hours: Math.floor((totalSeconds % 86_400) / 3_600),
@@ -31,14 +51,13 @@ const units: { label: string; key: keyof TimeLeft }[] = [
 ];
 
 export default function Countdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
+  const secondsRemaining = useSyncExternalStore(
+    subscribeToCountdown,
+    getCountdownSnapshot,
+    getServerCountdownSnapshot,
+  );
+  const timeLeft = secondsRemaining === null ? null : toTimeLeft(secondsRemaining);
   const secondsRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    setTimeLeft(getTimeLeft());
-    const interval = window.setInterval(() => setTimeLeft(getTimeLeft()), 1_000);
-    return () => window.clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const seconds = secondsRef.current;
@@ -49,14 +68,17 @@ export default function Countdown() {
       { y: -2, autoAlpha: 0.72 },
       { y: 0, autoAlpha: 1, duration: 0.18, ease: "power1.out" },
     );
-    return () => tick.kill();
+
+    return () => {
+      tick.kill();
+    };
   }, [timeLeft]);
 
   return (
     <div className="mt-8 w-full max-w-xl">
       <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <p className="text-sm font-semibold text-foreground">Camp begins in</p>
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-container sm:text-sm">17–20 December 2026</p>
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-container sm:text-sm">15–18th December 2026</p>
       </div>
       <div
         role="group"
