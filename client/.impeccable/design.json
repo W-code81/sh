@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "title": "Design System: SHIFT Camp",
+  "extensions": {
+    "colorMeta": {
+      "violet-dark": { "role": "brand", "displayName": "SHIFT Violet", "canonical": "#8b2cf5" },
+      "violet-light": { "role": "brand-light", "displayName": "Light Mode Violet", "canonical": "#7e2bd7" },
+      "dark-canvas": { "role": "background", "displayName": "Night Camp", "canonical": "#151119" },
+      "light-canvas": { "role": "background-light", "displayName": "Lavender Paper", "canonical": "#f8f5fb" },
+      "gold": { "role": "accent", "displayName": "Camp Gold", "canonical": "#f2c36b" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Bold Sans", "purpose": "Hero message and section titles." },
+      "body": { "displayName": "System Sans", "purpose": "Practical camp information and body copy." },
+      "label": { "displayName": "System Mono", "purpose": "Countdown numerals and compact utility labels." }
+    },
+    "shadows": [
+      { "name": "photo-frame", "value": "0 24px 60px rgba(10,5,16,0.38)", "purpose": "Depth beneath the candid camp slideshow." },
+      { "name": "primary-action", "value": "0 4px 16px rgba(139,44,245,0.24)", "purpose": "Subtle emphasis for registration actions." }
+    ],
+    "motion": [
+      { "name": "hero-first-paint", "value": "visible without JavaScript entrance animation", "purpose": "Keep the headline and primary information useful immediately." },
+      { "name": "photo-transition", "value": "GSAP power3.out, 680ms", "purpose": "Animate only subsequent user-controlled or autoplay slide changes." },
+      { "name": "scroll-reveal", "value": "GSAP ScrollTrigger, 550–680ms", "purpose": "Reveal later page sections once as they enter the viewport." },
+      { "name": "reduced-motion", "value": "no entrance or slide transitions", "purpose": "Honor prefers-reduced-motion and keep content available." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    { "name": "Theme Toggle", "kind": "button", "description": "A compact navigation control for switching dark and light appearance." },
+    { "name": "Hero Slideshow", "kind": "custom", "description": "An edge-to-edge candid camp slideshow with accessible glass controls." },
+    { "name": "Countdown", "kind": "custom", "description": "A left-aligned date and live countdown to December 17, 2026." }
+  ],
+  "narrative": {
+    "northStar": "A vivid SHIFT Camp welcome that gives campers and families a clear next step.",
+    "overview": "The original violet identity returns with a user-selectable light theme. A bold three-line headline, candid photography, camp date, and registration routes lead the experience.",
+    "keyCharacteristics": ["Dark violet default theme", "Complementary light theme", "Bold sans-serif headline", "Candid camp photography", "Clear registration paths"],
+    "rules": [
+      { "name": "The Fast Hero Rule", "body": "Show hero content on first paint; never use a loader to wait for an entrance animation.", "section": "motion" },
+      { "name": "The Reduced Motion Rule", "body": "Respect reduced-motion preferences and keep all text and controls available.", "section": "motion" }
+    ],
+    "dos": ["Follow system appearance on first visit and persist explicit visitor choice.", "Keep the camp date and registration path easy to find.", "Use camp photos supplied for the slideshow."],
+    "donts": ["Don't delay or hide the initial hero behind animation.", "Don't invent camp logistics that have not been confirmed."]
+  }
+}
