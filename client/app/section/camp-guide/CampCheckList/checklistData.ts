@@ -13,6 +13,7 @@ export type ChecklistCategory = {
   items: ChecklistItem[];
 };
 
+/** Single source of truth for checklist labels, notes, groups, and persistent item IDs. */
 export const checklistCategories: ChecklistCategory[] = [
   {
     id: "clothing",

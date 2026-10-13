@@ -6,6 +6,7 @@ const reminders = [
   "Wait for the organizers’ final message before packing venue-specific items.",
 ];
 
+/** Keeps practical packing reminders and confirmed camp details beside the list. */
 export default function ChecklistSidebar() {
   return (
     <aside aria-label="Camp planning details" className="flex flex-col gap-4 lg:sticky lg:top-24">
