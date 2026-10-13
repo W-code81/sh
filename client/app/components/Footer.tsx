@@ -2,14 +2,12 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 const footerLinks = [
-    { label: "About camp", href: "/about-camp" },
+    { label: "About camp", href: "/" },
     { label: "Camp guide", href: "/camp-guide" },
     { label: "Check registration", href: "/check-registration" },
 ];
 
 export default function Footer() {
-    const year = new Date().getFullYear();
-
     return (
         <footer className="mt-auto border-t border-outline-variant/30 bg-surface-container-lowest">
             <div className="mx-auto max-w-7xl px-5 py-8 md:px-8">
@@ -50,7 +48,7 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-8 flex flex-col gap-2 border-t border-outline-variant/30 pt-4 text-xs text-outline sm:flex-row sm:items-center sm:justify-between">
-                    <p>© {year} SHIFT Camp</p>
+                    <p>© SHIFT Camp</p>
                     <p>Made for our camp community.</p>
                 </div>
             </div>
