@@ -3,43 +3,80 @@
 :root {
   color-scheme: dark;
 
-  /* Core surfaces */
-  --background: #14121a;
-  --surface: #14121a;
-  --surface-container-lowest: #0f0d14;
-  --surface-container-low: #1d1a22;
-  --surface-container: #211e26;
-  --surface-container-high: #2b2931;
-  --surface-container-highest: #36333c;
-  --surface-bright: #3b3840;
-  --surface-variant: #36333c;
+  /* Original SHIFT violet theme. */
+  --background: #151119;
+  --surface: #1b1620;
+  --surface-container-lowest: #17121b;
+  --surface-container-low: #201a26;
+  --surface-container: #292230;
+  --surface-container-high: #332b3a;
+  --surface-container-highest: #403746;
+  --surface-bright: #463b50;
+  --surface-variant: #302837;
 
-  /* Text and structure */
-  --foreground: #e7e0eb;
-  --on-background: #e7e0eb;
-  --on-surface-variant: #cec2d8;
-  --outline: #978da1;
-  --outline-variant: #4c4355;
+  --foreground: #eee8f2;
+  --on-background: #eee8f2;
+  --on-surface-variant: #c2b8ca;
+  --outline: #8c7e96;
+  --outline-variant: #403746;
 
-  /* Brand and status colors */
-  --primary: #d8b9ff;
+  --primary: #d8b4ff;
   --primary-container: #8b2cf5;
-  --on-primary: #450086;
-  --on-primary-container: #f2e3ff;
-  --secondary: #d7baff;
-  --on-secondary: #430684;
-  --secondary-container: #5a2a9c;
-  --on-secondary-container: #c9a4ff;
-  --tertiary: #4edea3;
-  --on-tertiary: #003824;
-  --tertiary-container: #007751;
-  --on-tertiary-container: #83ffc6;
+  --primary-hover: #7421d5;
+  --on-primary: #fffaff;
+  --on-primary-container: #fffaff;
+  --secondary: #b99ad2;
+  --on-secondary: #201629;
+  --secondary-container: #392b46;
+  --on-secondary-container: #eadcf7;
+  --tertiary: #f2c36b;
+  --on-tertiary: #30230c;
+  --tertiary-container: #60451b;
+  --on-tertiary-container: #ffe7b1;
   --error: #ffb4ab;
   --on-error: #690005;
   --error-container: #93000a;
+  --hero-glow: rgb(108 35 154 / 18%);
 
   --font-geist-sans: ui-sans-serif, system-ui, sans-serif;
   --font-geist-mono: ui-monospace, SFMono-Regular, monospace;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #f8f5fb;
+  --surface: #f8f5fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2edf7;
+  --surface-container: #ece5f2;
+  --surface-container-high: #e5ddec;
+  --surface-container-highest: #dcd2e5;
+  --surface-bright: #ffffff;
+  --surface-variant: #e9e0f0;
+
+  --foreground: #261a31;
+  --on-background: #261a31;
+  --on-surface-variant: #62566c;
+  --outline: #7a6b85;
+  --outline-variant: #d6cbdc;
+
+  --primary: #64289a;
+  --primary-container: #7e2bd7;
+  --primary-hover: #6922b9;
+  --on-primary: #ffffff;
+  --on-primary-container: #ffffff;
+  --secondary: #725687;
+  --on-secondary: #ffffff;
+  --secondary-container: #e9d8f6;
+  --on-secondary-container: #32213f;
+  --tertiary: #77500b;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #f4dfa9;
+  --on-tertiary-container: #2c210b;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --hero-glow: rgb(139 44 245 / 8%);
 }
 
 @theme inline {
@@ -62,6 +99,7 @@
 
   --color-primary: var(--primary);
   --color-primary-container: var(--primary-container);
+  --color-primary-hover: var(--primary-hover);
   --color-on-primary: var(--on-primary);
   --color-on-primary-container: var(--on-primary-container);
   --color-secondary: var(--secondary);
@@ -93,7 +131,47 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+body,
+header,
+main,
+footer,
+button,
+a {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: ease-out;
+}
+
 ::selection {
-  background: var(--primary-container);
-  color: var(--on-primary-container);
+  background: var(--tertiary-container);
+  color: var(--foreground);
+}
+
+.hero-display {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.065em;
+}
+
+.camp-hero {
+  background-image: radial-gradient(ellipse at 14% 48%, var(--hero-glow), transparent 56%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  header,
+  main,
+  footer,
+  button,
+  a {
+    transition-duration: 0ms;
+  }
 }
