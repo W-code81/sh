@@ -1,10 +1,10 @@
 # SHIFT Camp — project progress
 
-Last updated: 12 October 2026
+Last updated: 13 October 2026
 
 ## Project overview
 
-SHIFT Camp is a church camp information and registration site for campers and their families. The planned gathering is **17–20 December 2026** at **Royal Girls Academy, Ozuoba, Obio-Akpor, Port Harcourt, Rivers State, Nigeria**. The expected audience is approximately 50–90 people; that range is a planning estimate, not a confirmed capacity claim.
+SHIFT Camp is a church camp information and registration site for campers and their families. The planned gathering is **15–18th December 2026** at **Royal Girls Academy, Ozuoba, Obio-Akpor, Port Harcourt, Rivers State, Nigeria**. The expected audience is approximately 50–90 people; that range is a planning estimate, not a confirmed capacity claim.
 
 This repository is a pnpm monorepo. The public-facing Next.js application lives in `client/`; `admin/` is a separate workspace area. The client currently uses Next.js 16.4, React 19, Tailwind CSS 4, Lucide React, GSAP, and Lenis.
 
@@ -60,6 +60,21 @@ Required fields are validated before moving forward. Step panels remain mounted 
 
 **This registration is still a frontend preview.** It does not submit, store, or securely process attendee information. Do not collect real medical or emergency-contact information until a registration service and appropriate handling are implemented. The camp fee and payment methods also remain unconfirmed; the interface does not claim a price, payment processor, payment deadline, capacity, refund policy, or completed registration.
 
+## Camp guide and packing checklist
+
+The camp guide route is developed in `client/app/camp-guide/` and `client/app/section/camp-guide/`. It wraps `CampFlow` in Suspense and selects the checklist at `?guide=check-list`.
+
+The checklist used to be a long static `MainLayout.tsx`; it is now split into:
+
+- `checklistData.ts` for five packing categories and their 17 entries.
+- `ChecklistCategory.tsx` for accessible expandable categories and controlled checkboxes.
+- `ProgressCard.tsx` for the radial and linear progress indicators.
+- `ChecklistSidebar.tsx` for packing reminders and confirmed date/venue details.
+- `checklistStore.ts` and `useCampChecklist.ts` for state, persistence, and the external-store subscription.
+- `MainLayout.tsx` as the small composition of progress, categories, and sidebar.
+
+Progress saves to local browser storage, survives refresh, and can be marked complete or reset from the header. Packing copy was revised to remove assumptions about mountain weather, cabins, and unconfirmed venue arrangements. `Header.tsx` now uses Lucide icons, avoids the invented attendee name, and provides working Mark all and Reset controls. The checklist body is connected on the route.
+
 ## Browser and rendering cleanup
 
 Recent cleanup addressed the following issues:
@@ -71,6 +86,8 @@ Recent cleanup addressed the following issues:
 - Corrected the venue image paths to `/images/expectation/venue.png`.
 - Replaced template content that implied unconfirmed prices, payment vendors, camp capacity, lodging, transport, and policies with confirmed facts or clear “to be confirmed” copy.
 - Kept the registration preview notice visible so visitors know their form values are not submitted or saved.
+- Corrected invalid HTML comments and an unescaped apostrophe in the in-progress camp checklist JSX, and removed its unused imports.
+- Replaced the long static camp checklist markup with data-driven subcomponents, a persistent checklist store, and a connected header with working bulk actions.
 
 The registration route was opened in the browser and steps 1, 2, and 3 were checked after the cleanup; the broken image was fixed and the Next.js issue overlay cleared.
 
@@ -83,10 +100,12 @@ The registration step, theme toggle, countdown, and hero slideshow were updated 
 - The countdown subscribes to a stable one-second countdown snapshot through `useSyncExternalStore`; its server snapshot remains a placeholder to avoid hydration differences.
 - The slideshow subscribes to the browser reduced-motion preference through `useSyncExternalStore`.
 
+ESLint passed for all four requested components: `ThemeToggle.tsx`, `RegisterFlow.tsx`, `Countdown.tsx`, and `HeroSlideshow.tsx`. Full-client ESLint passes. A targeted TypeScript check of the camp checklist entry point and its imported components passes; the full project type check currently hits stale generated `.next/types` references to the missing `app/about-camp/page.js` route.
+
 ## Next work
 
 - Connect registration to a real backend, including data validation, safe handling for sensitive attendee details, and a real confirmation state.
 - Confirm the camp fee, payment instructions, age eligibility, transport, accommodation, capacity, and policies with organizers before publishing those details.
 - Build and verify the camp guide and registration lookup routes.
-- Run the client lint command and address any remaining findings. In this environment, the pnpm executable was blocked by Windows Application Control during the previous attempt, so lint verification still needs to be run from an allowed shell.
+- Refresh the generated Next.js route types and resolve the full-project type-check references to the missing `about-camp` page. Full-client ESLint and the focused camp checklist type check pass using the installed tool CLIs directly; the package-manager executable remains blocked by Windows Application Control in this environment.
 - Check the landing page and registration page at mobile and desktop widths in both light and dark themes.
