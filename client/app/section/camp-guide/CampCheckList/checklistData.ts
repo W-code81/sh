@@ -23,7 +23,7 @@ export const checklistCategories: ChecklistCategory[] = [
       { id: "clothing-hoodie", label: "Comfortable hoodie or light jacket", note: "Choose layers that suit the expected weather." },
       { id: "clothing-shoes", label: "Comfortable closed-toe shoes", note: "Useful for walking and group activities." },
       { id: "clothing-activity", label: "Clothes for activities", note: "Pack comfortable outfits you can move around in." },
-      { id: "clothing-change", label: "Enough clothes for the camp dates", note: "Camp runs from 17–20 December 2026." },
+      { id: "clothing-change", label: "Enough clothes for the camp dates", note: "Camp runs from 15-18th December 2026." },
       { id: "clothing-rain", label: "Rainwear, if needed", note: "Check the forecast before you pack." },
     ],
   },
