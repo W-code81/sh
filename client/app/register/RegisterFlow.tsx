@@ -41,7 +41,7 @@ export default function RegisterFlow() {
         </Link>
 
         <div className="mb-8 mt-8 max-w-3xl sm:mb-10 sm:mt-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">SHIFT Camp · 17–20 December 2026</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">SHIFT Camp · 15–18 December 2026</p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Let’s get you ready for camp</h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-on-surface-variant sm:text-base sm:leading-7">
             Share a few details so the camp team can prepare for your visit.
@@ -118,7 +118,7 @@ export default function RegisterFlow() {
                 </div>
                 <div className="flex items-center gap-3 border-t border-outline-variant/60 pt-4 text-sm">
                   <CalendarDays aria-hidden="true" className="shrink-0 text-primary" size={17} />
-                  <span className="text-on-surface-variant">15–18th December 2026</span>
+                  <span className="text-on-surface-variant">15–18 December 2026</span>
                 </div>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Royal+Girls+Academy%2C+Ozuoba%2C+Obio-Akpor%2C+Port+Harcourt%2C+Rivers+State%2C+Nigeria"
