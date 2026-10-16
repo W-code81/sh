@@ -30,7 +30,7 @@ export default function ChecklistSidebar() {
       <section className="rounded-2xl border border-outline-variant/50 bg-surface-container-low p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-on-surface-variant">Camp details</p>
         <div className="mt-4 space-y-3">
-          <p className="flex items-start gap-3 text-sm leading-5 text-foreground"><CalendarDays aria-hidden="true" className="mt-0.5 shrink-0 text-primary" size={17} />15-18th December 2026</p>
+          <p className="flex items-start gap-3 text-sm leading-5 text-foreground"><CalendarDays aria-hidden="true" className="mt-0.5 shrink-0 text-primary" size={17} />15–18 December 2026</p>
           <p className="flex items-start gap-3 text-sm leading-5 text-foreground"><MapPin aria-hidden="true" className="mt-0.5 shrink-0 text-primary" size={17} />Royal Girls Academy, Ozuoba</p>
         </div>
         <p className="mt-4 flex gap-2 border-t border-outline-variant/50 pt-4 text-xs leading-5 text-on-surface-variant"><MessageCircle aria-hidden="true" className="mt-0.5 shrink-0 text-primary" size={15} />Check organizer messages for final travel, accommodation, and packing instructions.</p>

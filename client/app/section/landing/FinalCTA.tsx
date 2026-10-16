@@ -10,7 +10,7 @@ export default function FinalCTA() {
         >
             <div data-scroll-reveal className="relative overflow-hidden rounded-xl bg-secondary-container px-6 py-10 text-left text-on-secondary-container sm:px-10 md:py-14">
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-outline">
-                    SHIFT Camp · 17–20 December 2026
+                    SHIFT Camp · 15–18 December 2026
                 </span>
 
                 <h2

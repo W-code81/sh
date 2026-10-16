@@ -16,7 +16,7 @@ export default function PaymentDetails({ active, onBack }: PaymentDetailsProps) 
                     <p className="text-sm font-semibold text-foreground">Payment details to be announced</p>
                     <p className="mt-2 text-sm leading-6 text-on-surface-variant">The camp fee and accepted payment methods have not been confirmed yet. This page is a frontend preview and does not submit or save registration details.</p>
                     <div className="mt-5 grid gap-3 border-t border-outline-variant/60 pt-5 text-sm sm:grid-cols-2">
-                        <div className="flex items-start gap-3"><CalendarDays aria-hidden="true" className="mt-0.5 shrink-0 text-primary" size={17} /><span><span className="block font-medium text-foreground">Camp dates</span><span className="mt-1 block text-on-surface-variant">15–18th December 2026</span></span></div>
+                        <div className="flex items-start gap-3"><CalendarDays aria-hidden="true" className="mt-0.5 shrink-0 text-primary" size={17} /><span><span className="block font-medium text-foreground">Camp dates</span><span className="mt-1 block text-on-surface-variant">15–18 December 2026</span></span></div>
                         <div className="flex items-start gap-3"><MapPin aria-hidden="true" className="mt-0.5 shrink-0 text-primary" size={17} /><span><span className="block font-medium text-foreground">Venue</span><span className="mt-1 block text-on-surface-variant">Royal Girls Academy, Ozuoba</span></span></div>
                     </div>
                 </div>

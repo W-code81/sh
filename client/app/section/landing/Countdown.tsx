@@ -78,7 +78,7 @@ export default function Countdown() {
     <div className="mt-8 w-full max-w-xl">
       <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <p className="text-sm font-semibold text-foreground">Camp begins in</p>
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-container sm:text-sm">15–18th December 2026</p>
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-primary-container sm:text-sm">15–18 December 2026</p>
       </div>
       <div
         role="group"
