@@ -1,7 +1,5 @@
-export default function CheckRegistration() {
-  return (
-   <>
-    <h1 className="text-7xl">CHECK REGISTRATION</h1>
-   </>
-  );
+import CheckRegistrationFlow from "./CheckRegistrationFlow";
+
+export default function CheckRegistrationPage() {
+  return <CheckRegistrationFlow />;
 }
