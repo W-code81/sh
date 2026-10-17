@@ -139,7 +139,7 @@ export default function HeroSlideshow() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/85">SHIFT Camp</p>
           <p className="mt-2 max-w-sm text-xl font-semibold leading-tight sm:text-2xl">A little space to grow together.</p>
         </div>
-        <div className="absolute right-3 top-3 bottom-auto flex items-center gap-1 rounded-full border border-white/55 bg-background/55 p-1 text-foreground shadow-[0_8px_28px_rgba(10,5,16,0.32)] backdrop-blur-xl sm:right-4 sm:top-auto sm:bottom-4">
+        <div className="hidden sm:flex absolute right-3 top-3 bottom-auto   items-center gap-1 rounded-full border border-white/55 bg-background/55 p-1 text-foreground shadow-[0_8px_28px_rgba(10,5,16,0.32)] backdrop-blur-xl sm:right-4 sm:top-auto sm:bottom-4">
           <button
             type="button"
             aria-label="Previous camp photo"
