@@ -3,12 +3,18 @@
 import { useRef } from "react";
 import { ArrowRight, Building2, Mail, Phone, UserRound, UsersRound } from "lucide-react";
 import { continueIfValid } from "./stepValidation";
+import { AGE_GROUPS, type AttendeeFieldChange, type RegisForm } from "../../register/types";
 
-type AttendeeDetailsProps = { active: boolean; onContinue: () => void };
+type AttendeeDetailsProps = {
+    active: boolean;
+    onContinue: () => void;
+    attendee: RegisForm["attendee"];
+    handleAttendeeFieldChange: AttendeeFieldChange;
+};
 
 const fieldClass = "mt-2 h-12 w-full rounded-xl border border-outline-variant/70 bg-surface-container-lowest px-4 text-sm text-foreground shadow-sm outline-none transition placeholder:text-on-surface-variant/65 focus:border-primary focus:ring-2 focus:ring-primary/20 disabled:cursor-not-allowed";
 
-export default function AttendeeDetails({ active, onContinue }: AttendeeDetailsProps) {
+export default function AttendeeDetails({ active, onContinue, attendee, handleAttendeeFieldChange }: AttendeeDetailsProps) {
     const sectionRef = useRef<HTMLFieldSetElement>(null);
 
     return (
@@ -25,16 +31,16 @@ export default function AttendeeDetails({ active, onContinue }: AttendeeDetailsP
 
                 <div className="grid gap-5 sm:grid-cols-2">
                     <label className="text-sm font-medium text-foreground sm:col-span-2" htmlFor="fullName">Full name <span className="text-error">*</span>
-                        <span className="relative block"><UserRound aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="name" className={`${fieldClass} pl-11`} id="fullName" name="fullName" placeholder="Your name" required /></span>
+                        <span className="relative block"><UserRound aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="name" className={`${fieldClass} pl-11`} id="fullName" name="fullName" placeholder="Your name" required value={attendee.fullName} onChange={(event) => handleAttendeeFieldChange("fullName", event.currentTarget.value)} /></span>
                     </label>
                     <label className="text-sm font-medium text-foreground" htmlFor="phoneNumber">Phone number <span className="text-error">*</span>
-                        <span className="relative block"><Phone aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="tel" className={`${fieldClass} pl-11`} id="phoneNumber" name="phoneNumber" placeholder="Your phone number" required type="tel" /></span>
+                        <span className="relative block"><Phone aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="tel" className={`${fieldClass} pl-11`} id="phoneNumber" name="phoneNumber" placeholder="Your phone number" required type="tel" value={attendee.phoneNumber} onChange={(event) => handleAttendeeFieldChange("phoneNumber", event.currentTarget.value)} /></span>
                     </label>
                     <label className="text-sm font-medium text-foreground" htmlFor="emailAddress">Email address <span className="text-error">*</span>
-                        <span className="relative block"><Mail aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="email" className={`${fieldClass} pl-11`} id="emailAddress" name="emailAddress" placeholder="you@example.com" required type="email" /></span>
+                        <span className="relative block"><Mail aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="email" className={`${fieldClass} pl-11`} id="emailAddress" name="emailAddress" placeholder="you@example.com" required type="email" value={attendee.email} onChange={(event) => handleAttendeeFieldChange("email", event.currentTarget.value)} /></span>
                     </label>
                     <label className="text-sm font-medium text-foreground sm:col-span-2" htmlFor="fellowshipGroup">Church or fellowship group <span className="text-error">*</span>
-                        <span className="relative block"><Building2 aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="organization" className={`${fieldClass} pl-11`} id="fellowshipGroup" name="fellowshipGroup" placeholder="Your church or fellowship" required /></span>
+                        <span className="relative block"><Building2 aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" size={17} /><input autoComplete="organization" className={`${fieldClass} pl-11`} id="fellowshipGroup" name="fellowshipGroup" placeholder="Your church or fellowship" required value={attendee.fellowshipGroup} onChange={(event) => handleAttendeeFieldChange("fellowshipGroup", event.currentTarget.value)} /></span>
                     </label>
                 </div>
 
@@ -42,9 +48,9 @@ export default function AttendeeDetails({ active, onContinue }: AttendeeDetailsP
                     <legend className="text-sm font-medium text-foreground">Age group <span className="text-error">*</span></legend>
                     <p id="age-help" className="mt-1 text-xs leading-5 text-on-surface-variant">Choose the range that fits you best.</p>
                     <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                        {["18–22", "23–29", "30+"].map((age, index) => (
+                        {AGE_GROUPS.map((age) => (
                             <label key={age} className="flex cursor-pointer items-center gap-3 rounded-xl border border-outline-variant/70 bg-background px-4 py-3 text-sm text-foreground transition has-checked:border-primary has-checked:bg-primary-container/10 has-focus-visible:ring-2 has-focus-visible:ring-primary/30">
-                                <input className="size-4 accent-primary" type="radio" name="ageGroup" value={age} required={index === 0} />
+                                <input className="size-4 accent-primary" type="radio" name="ageGroup" value={age} checked={attendee.ageGroup === age} onChange={() => handleAttendeeFieldChange("ageGroup", age)} required />
                                 <UsersRound aria-hidden="true" className="text-on-surface-variant" size={17} />{age}
                             </label>
                         ))}
