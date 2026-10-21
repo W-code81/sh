@@ -2,12 +2,6 @@ import { ZodError } from "zod";
 import { NextResponse } from "next/server";
 import { createRegistration } from "@/lib/services/registration";
 
-// export async function GET() {
-//   await connectDb();
-//   const registrations = await Registration.find({ registrationStatus: "active" });
-//   return Response.json(registrations);
-// }
-
 /** Creates a website registration using the shared validation and service layer. */
 export async function POST(request: Request) {
   let body: unknown;
