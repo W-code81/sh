@@ -39,6 +39,7 @@ export async function createRegistration( input: unknown,{ source, createdByAdmi
         registrationSource: source,
         registrationStatus: "active",
         payment: {
+          ...parsed.payment,
           status: "due",
           currency: "NGN",
           amountPaidKobo: 0,
