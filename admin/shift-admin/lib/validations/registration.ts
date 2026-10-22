@@ -15,6 +15,7 @@ export const registrationInputSchema = z
     emergencyName: cleanText(2, 120, "Emergency contact name"),
     emergencyPhone: cleanText(7, 32, "Emergency contact phone"),
     medicalDietary: z.string().trim().max(1000, "Requests are too long").optional().default(""),
+    paymentMethod: z.literal("pay_on_arrival").default("pay_on_arrival"),
   })
   .strict()
   .transform((input) => {
@@ -34,6 +35,7 @@ export const registrationInputSchema = z
         phone: input.emergencyPhone,
       },
       requests: input.medicalDietary ? { dietaryAccessibility: input.medicalDietary } : {},
+      payment: { method: input.paymentMethod },
     };
   });
 
