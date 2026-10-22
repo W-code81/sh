@@ -1,6 +1,7 @@
 export const AGE_GROUPS = ["18–22", "23–29", "30+"] as const;
 
 export type AgeGroup = (typeof AGE_GROUPS)[number];
+export type RegistrationPaymentMethod = "pay_on_arrival";
 
 export interface RegisForm {
   attendee: {
@@ -17,6 +18,7 @@ export interface RegisForm {
   requests: {
     dietaryAccessibility: string;
   };
+  paymentMethod: RegistrationPaymentMethod;
 }
 
 export type AttendeeFieldChange = <K extends keyof RegisForm["attendee"]>(
