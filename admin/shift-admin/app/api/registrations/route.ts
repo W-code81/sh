@@ -1,6 +1,7 @@
 import { ZodError } from "zod";
 import { NextResponse } from "next/server";
 import { createRegistration } from "@/lib/services/registration";
+import { sendRegistrationConfirmationEmail } from "@/lib/services/registration-email";
 
 /** Creates a website registration using the shared validation and service layer. */
 export async function POST(request: Request) {
@@ -14,6 +15,16 @@ export async function POST(request: Request) {
 
   try {
     const registration = await createRegistration(body, { source: "website" });
+    
+    let confirmationEmailSent = false;
+
+    try {
+      await sendRegistrationConfirmationEmail(registration);
+      confirmationEmailSent = true;
+    } catch (emailError: unknown) {
+      // Keep the saved registration successful even if the email provider is down.
+      console.error("Registration confirmation email failed:", emailError);
+    }
 
     // Return only what the public registration flow needs; attendee and emergency
     // contact details stay on the server.
@@ -30,6 +41,7 @@ export async function POST(request: Request) {
             amountDueKobo: registration.payment.amountDueKobo,
             amountPaidKobo: registration.payment.amountPaidKobo,
           },
+          confirmationEmailSent,
         },
       },
       { status: 201 },
