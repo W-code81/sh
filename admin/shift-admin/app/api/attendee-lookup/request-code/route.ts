@@ -82,7 +82,7 @@ export async function POST(request: Request) {
 <div style="margin:0;background:#f7f5f0;padding:32px 16px;color:#22231f;font-family:Arial,sans-serif">
   <div style="margin:0 auto;max-width:560px;border:1px solid #e5e1d8;border-radius:16px;background:#ffffff;padding:32px">
     <p style="margin:0;color:#53624b;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase">SHIFT Camp · 15–18 December 2026</p>
-    <h1 style="margin:16px 0 12px;font-size:26px;line-height:1.2">Verify your account, ${userName}</h1>
+    <h1 style="margin:16px 0 12px;font-size:26px;line-height:1.2">Verify your registration, ${userName}</h1>
     <p style="margin:0;color:#55584f;font-size:16px;line-height:1.6">Use this code to access your SHIFT Camp registration.</p>
     <div style="margin:24px 0;padding:20px;border:1px solid #ded9ce;border-radius:12px;background:#f7f5f0;text-align:center">
       <p style="margin:0;color:#65675f;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase">Verification Code</p>
@@ -108,7 +108,7 @@ export async function POST(request: Request) {
       { message: genericMessage, challengeId },
       { status: 202, headers: { "Cache-Control": "no-store" } },
     );
-    
+
   } catch {
     console.error("Request-code processing failed.");
     return NextResponse.json(
