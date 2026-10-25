@@ -14,6 +14,7 @@ type RegistrationResponse = {
       amountDueKobo?: number;
       amountPaidKobo: number;
     };
+    confirmationEmailSent?: boolean;
   };
 };
 
@@ -44,7 +45,10 @@ export async function createRegistration(payload: unknown) {
 
     return {
       ok: true as const,
-      registration: result.registration,
+      registration: {
+        ...result.registration,
+        confirmationEmailSent: result.registration.confirmationEmailSent ?? false,
+      },
     };
     
   } catch {

@@ -14,7 +14,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col bg-background text-on-surface antialiased" suppressHydrationWarning>
-        <LenisScroll />
+        {/* <LenisScroll /> */}
         <Navbar />
         {children}
         <Footer />

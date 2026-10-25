@@ -18,10 +18,10 @@ const information = [
     },
     {
         icon: Utensils,
-        title: "Meals & dietary needs",
-        summary: "Tell the organizers about allergies and dietary needs",
+        title: "Medical & dietary needs",
+        summary: "Let the camp team know about medical conditions, allergies, or dietary needs",
         details:
-            "Include each allergy or dietary requirement on your registration. The camp team can follow up with you about available meal options.",
+            "Include any medical conditions, allergies, or dietary requirements on your registration so the camp team can prepare and follow up when needed.",
     },
     {
         icon: BusFront,

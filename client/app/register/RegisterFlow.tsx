@@ -130,6 +130,11 @@ export default function RegisterFlow() {
           <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-primary">SHIFT Camp · Registration saved</p>
           <h1 id="registration-saved-heading" className="mt-2 text-3xl font-bold tracking-tight text-foreground">You’re on the list.</h1>
           <p className="mt-3 text-sm leading-6 text-on-surface-variant">Your registration is saved. Payment is due when you arrive at camp. Keep this pass ID so you can check your registration later.</p>
+          <p role="status" className="mt-3 text-sm leading-6 text-on-surface-variant">
+            {savedRegistration.confirmationEmailSent
+              ? "We’ve sent your pass ID and camp details to your registration email."
+              : "We couldn’t send the confirmation email just now. Save your pass ID below and contact the camp team if you need help."}
+          </p>
 
           <div className="mt-6 rounded-xl border border-outline-variant/70 bg-background p-5">
             <div className="flex items-center gap-2 text-primary"><TicketCheck aria-hidden="true" size={18} /><p className="text-[11px] font-semibold uppercase tracking-[0.14em]">Official Pass ID</p></div>
