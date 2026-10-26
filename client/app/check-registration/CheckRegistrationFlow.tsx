@@ -56,7 +56,7 @@ export default function CheckRegistrationFlow() {
     const formData = new FormData(event.currentTarget);
 
     const payload = {
-      challengeId: challengeId?.trim().toUpperCase() ?? "",
+      challengeId: challengeId?.trim() ?? "",
       code: String(formData.get("code") ?? "").trim(),
     }
     setVerifyError(null);
@@ -71,16 +71,26 @@ export default function CheckRegistrationFlow() {
         return
       }
 
-      const ticketDto:TicketDetails ={
+      const paymentMethodMap = {
+        card: "card",
+        bank_transfer: "bank-transfer",
+        pay_on_arrival: "pay-on-arrival",
+        onsite: "onsite",
+      } as const;
+      
+      const method = results.attendee.paymentMethod;
+      
+      const ticketDto: TicketDetails = {
         passId: results.attendee.passId,
         attendeeName: results.attendee.attendeeName,
         email: results.attendee.email,
-        paymentMethod: results.attendee.paymentMethod,
+        paymentMethod: method ? paymentMethodMap[method] : undefined,
         paymentStatus: results.attendee.paymentStatus
       }
 
       setTicket(ticketDto)
       setVerifyCode(false)
+      setChallengeId(null)
     }
     catch {
       setVerifyError("We couldn’t reach the verification service. Please try again shortly.")
@@ -118,17 +128,17 @@ export default function CheckRegistrationFlow() {
           </div>
         </section>
 
-        <section aria-label={ticket ? "Registration details preview" : "Find your registration"} className="w-full">
+        <section aria-label={ticket ? "Verified registration details" : verifyCode ? "Enter verification code" : "Find your registration"} className="w-full">
 
-          {!verifyCode && !ticket && <DetailsForm handleRequest={() => handleRequest} isRequesting={isRequesting} requestError={requestError} />}
-          {verifyCode && !ticket && <CodeForm handleVerify={() => handleVerify} isVerifying={isVerifying} verifyError={verifyError} />}
+          {!verifyCode && !ticket && <DetailsForm handleRequest={handleRequest} isRequesting={isRequesting} requestError={requestError} />}
+          {verifyCode && !ticket && <CodeForm handleVerify={handleVerify} isVerifying={isVerifying} verifyError={verifyError} />}
           {!verifyCode && ticket && (
             <div>
               <div className="mb-4 flex items-start justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2 text-primary">
                     <CheckCircle2 aria-hidden="true" size={20} />
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em]">Lookup preview</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em]">Verified attendee</p>
                   </div>
                   <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground">Your registration details</h2>
                 </div>
