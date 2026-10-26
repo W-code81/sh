@@ -2,11 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { verifyLookUp } from "@/lib/services/attendee-lookup";
 
-export const runtime = "nodejs";
-
 // zod schema
-const verifyCodeSchema = z
-    .object({
+const verifyCodeSchema = z.object({
         challengeId: z.uuid(),
         code: z.string().trim().regex(/^[0-9a-fA-F]{16}$/),
     })
@@ -48,7 +45,7 @@ export async function POST(request: Request) {
             { attendee: result.attendee },
             { status: 200, headers: { "Cache-Control": "no-store" } },
         );
-        
+
     } catch {
         console.error("Verify-code processing failed.");
         return NextResponse.json(
