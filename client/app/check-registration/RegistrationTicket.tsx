@@ -1,7 +1,7 @@
 import { CalendarDays, Clock3, CreditCard, MapPin, WalletCards, type LucideIcon } from "lucide-react";
 
-export type PaymentMethod = "card" | "bank-transfer" | "pay-on-arrival";
-export type PaymentStatus = "paid" | "pending" | "due";
+export type PaymentMethod = "card" | "bank-transfer" | "pay-on-arrival" | "onsite";
+export type PaymentStatus = "paid" | "pending" | "due" | "failed" | "refunded";
 
 export type TicketDetails = {
   passId: string;
@@ -19,6 +19,24 @@ type PaymentPresentation = {
 };
 
 function getPaymentPresentation( method?: PaymentMethod, status?: PaymentStatus,): PaymentPresentation {
+  if (status === "failed") {
+    return {
+      label: "Payment not confirmed",
+      detail: "Please contact the camp team to resolve your payment status.",
+      icon: Clock3,
+      className: "border-error/30 bg-error/10 text-error",
+    };
+  }
+
+  if (status === "refunded") {
+    return {
+      label: "Payment refunded",
+      detail: "Contact the camp team if you have questions about your registration.",
+      icon: WalletCards,
+      className: "border-outline-variant bg-surface-container-high text-on-surface-variant",
+    };
+  }
+
   if (status === "paid") {
     return {
       label: "Paid and confirmed",
@@ -28,10 +46,19 @@ function getPaymentPresentation( method?: PaymentMethod, status?: PaymentStatus,
     };
   }
 
-  if (method === "pay-on-arrival" || status === "due") {
+  if (method === "pay-on-arrival") {
     return {
       label: "Pay on arrival",
       detail: "Payment is due at camp check-in.",
+      icon: WalletCards,
+      className: "border-tertiary/25 bg-tertiary-container/15 text-tertiary",
+    };
+  }
+
+  if (method === "onsite") {
+    return {
+      label: "On-site payment",
+      detail: "Your payment is handled at camp check-in.",
       icon: WalletCards,
       className: "border-tertiary/25 bg-tertiary-container/15 text-tertiary",
     };
@@ -52,6 +79,15 @@ function getPaymentPresentation( method?: PaymentMethod, status?: PaymentStatus,
       detail: "Your online payment is awaiting confirmation.",
       icon: Clock3,
       className: "border-primary/25 bg-primary-container/10 text-primary",
+    };
+  }
+
+  if (status === "due") {
+    return {
+      label: "Payment due",
+      detail: "Payment is still due for this registration.",
+      icon: WalletCards,
+      className: "border-tertiary/25 bg-tertiary-container/15 text-tertiary",
     };
   }
 
@@ -138,7 +174,7 @@ export default function RegistrationTicket({ ticket }: { ticket: TicketDetails }
             <p className="mt-1 text-sm leading-5 opacity-85">{payment.detail}</p>
             {ticket.paymentMethod && (
               <p className="mt-2 text-xs font-medium opacity-80">
-                Method: {ticket.paymentMethod === "pay-on-arrival" ? "Pay on arrival" : ticket.paymentMethod === "bank-transfer" ? "Bank transfer" : "Card"}
+                Method: {ticket.paymentMethod === "pay-on-arrival" ? "Pay on arrival" : ticket.paymentMethod === "bank-transfer" ? "Bank transfer" : ticket.paymentMethod === "onsite" ? "On-site payment" : "Card"}
               </p>
             )}
           </div>
