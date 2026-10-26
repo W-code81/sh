@@ -1,8 +1,29 @@
 import type { HydratedDocument } from "mongoose";
+import { createHmac, timingSafeEqual } from "node:crypto";
 import connectDb from "../db/mongoose";
-import Registration, { type RegistrationRecord } from "../models/registration";
+import Registration, {
+  type PaymentMethod,
+  type PaymentStatus,
+  type RegistrationRecord,
+} from "../models/registration";
 import OtpChallenge from "../models/otpChallenges";
-import { createHmac } from "crypto";
+
+export type AttendeeTicketDto = {
+  passId: string;
+  attendeeName: string;
+  email: string;
+  paymentMethod: PaymentMethod | null;
+  paymentStatus: PaymentStatus;
+};
+
+type VerifyLookupResult =
+  | { ok: true; attendee: AttendeeTicketDto }
+  | { ok: false; message: string };
+
+const invalidCodeResult: VerifyLookupResult = {
+  ok: false,
+  message: "Invalid or expired code.",
+};
 
 /** Finds an active registration matching the attendee's pass ID and email. */
 export async function lookUp(
@@ -23,35 +44,49 @@ export async function lookUp(
   });
 }
 
-export async function verifyLookUp(challengeId: string, code: string) {
-  const cleanChallengeId = challengeId.trim().toUpperCase()
+export async function verifyLookUp(
+  challengeId: string,
+  code: string,
+): Promise<VerifyLookupResult> {
+  // Challenge IDs are UUIDs; keep their stored casing consistent.
+  const cleanChallengeId = challengeId.trim().toLowerCase();
   const cleanCode = code.trim().toUpperCase();
   const apiKey = process.env.RESEND_API_KEY;
-  const hashedCode = createHmac("sha256", apiKey).update(cleanCode).digest("hex");
-  const now = new Date();
 
-  if (!cleanChallengeId || !cleanCode) return null
+  if (!cleanChallengeId || !cleanCode) return invalidCodeResult;
+  if (!apiKey) throw new Error("RESEND_API_KEY is not configured.");
 
   await connectDb();
 
-  // Find active challenge and include codeHash
+  // codeHash is excluded by default in the schema, so explicitly select it.
   const challenge = await OtpChallenge.findOne({
     challengeId: cleanChallengeId,
   }).select("+codeHash");
 
-  // Reject expired, consumed, or locked challenges
+  const now = new Date();
+
   if (
     !challenge ||
     challenge.consumedAt !== null ||
     challenge.expiresAt <= now ||
     challenge.attempts >= challenge.maxAttempts
   ) {
-    return { ok: false, message: "Invalid or expired code." };
+    return invalidCodeResult;
   }
 
-  // Compare submitted code hash safely and Increment attempts on failure
-  if (challenge.codeHash !== hashedCode) {
-    const updateChallenge = await OtpChallenge.updateOne(
+  const submittedHash = createHmac("sha256", apiKey)
+    .update(cleanCode)
+    .digest("hex");
+    
+  const storedHash = Buffer.from(challenge.codeHash, "hex");
+  const submittedHashBuffer = Buffer.from(submittedHash, "hex");
+
+  const codeMatches =
+    storedHash.length === submittedHashBuffer.length &&
+    timingSafeEqual(storedHash, submittedHashBuffer);
+
+  if (!codeMatches) {
+    await OtpChallenge.updateOne(
       {
         _id: challenge._id,
         consumedAt: null,
@@ -61,32 +96,30 @@ export async function verifyLookUp(challengeId: string, code: string) {
       { $inc: { attempts: 1 } },
     );
 
-    return updateChallenge
+    return invalidCodeResult;
   }
 
-  // Atomically consume challenge on success
-  await OtpChallenge.updateOne(
+  // Consume exactly once; a concurrent verification will fail this condition.
+  const consumeResult = await OtpChallenge.updateOne(
     {
       _id: challenge._id,
-      consumedAt: now,
+      consumedAt: null,
       expiresAt: { $gt: now },
       attempts: { $lt: challenge.maxAttempts },
     },
-    { $inc: { attempts: 1 } },
+    { $set: { consumedAt: now } },
   );
+  if (consumeResult.modifiedCount !== 1) return invalidCodeResult;
 
-  // Return a minimal attendee/ticket DTO
+  // Select only the fields the attendee ticket needs.
   const registration = await Registration.findOne({
     _id: challenge.registrationId,
     registrationStatus: "active",
-  }).select(
-    "passId attendee.fullName attendee.email payment.method payment.status",
-  ).lean();
+  })
+    .select("passId attendee.fullName attendee.email payment.method payment.status")
+    .lean();
 
-
-  if (!registration) {
-    return { ok: false, message: "Invalid or expired code." };
-  }
+  if (!registration) return invalidCodeResult;
 
   return {
     ok: true,
