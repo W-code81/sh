@@ -1,9 +1,10 @@
 "use client"
 
 import { ArrowRight, Mail } from "lucide-react";
+import type { FormEventHandler } from "react";
 
 type DetailsFormProp = {
-    handleRequest: () => void,
+    handleRequest: FormEventHandler<HTMLFormElement>,
     isRequesting: boolean,
     requestError: string | null
 }
@@ -61,6 +62,7 @@ export function DetailsForm({handleRequest, isRequesting, requestError}:DetailsF
 
                 <button
                     type="submit"
+                    disabled={isRequesting}
                     className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary-container px-5 py-3 text-sm font-semibold text-on-primary-container shadow-[0_6px_20px_rgba(139,44,245,0.18)] transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:scale-[0.99] cursor-pointer"
                 >
                     {isRequesting ? 'Requesting...' : 'Request OTP'} <ArrowRight aria-hidden="true" size={17} />
