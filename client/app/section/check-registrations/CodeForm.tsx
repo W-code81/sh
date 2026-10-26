@@ -1,9 +1,10 @@
 "use client"
 
 import { ArrowRight, Binary } from "lucide-react"
+import type { FormEventHandler } from "react";
 
 type CodeFormProp ={
-    handleVerify: () => void,
+    handleVerify: FormEventHandler<HTMLFormElement>,
     isVerifying: boolean,
     verifyError: string | null
 }
@@ -23,30 +24,19 @@ export function CodeForm({handleVerify, isVerifying, verifyError}: CodeFormProp)
 
             <form className="mt-6 space-y-5" onSubmit={handleVerify}>
                 <div>
-                    <label htmlFor="pass-id" className="mb-2 block text-sm font-medium text-foreground">
-                        Official Pass ID
+                    <label htmlFor="verification-code" className="mb-2 block text-sm font-medium text-foreground">
+                        Email verification code
                     </label>
                     <input
-                        id="pass-id"
-                        name="passId"
+                        id="verification-code"
+                        name="code"
                         type="text"
-                        autoComplete="off"
-                        placeholder="e.g. SHIFT-7K4P9D"
-                        required
-                        className="min-h-12 w-full rounded-xl border border-outline-variant bg-surface-container px-4 text-sm text-foreground outline-none transition placeholder:text-on-surface-variant/60 hover:border-outline focus:border-primary focus:ring-4 focus:ring-primary/15"
-                    />
-                </div>
-
-                <div>
-                    <label htmlFor="registration-email" className="mb-2 block text-sm font-medium text-foreground">
-                        Registration email
-                    </label>
-                    <input
-                        id="registration-email"
-                        name="email"
-                        type="email"
-                        autoComplete="email"
-                        placeholder="you@example.com"
+                        autoComplete="one-time-code"
+                        autoCapitalize="characters"
+                        inputMode="text"
+                        maxLength={16}
+                        pattern="[A-Fa-f0-9]{16}"
+                        placeholder="Enter the 16-character code"
                         required
                         className="min-h-12 w-full rounded-xl border border-outline-variant bg-surface-container px-4 text-sm text-foreground outline-none transition placeholder:text-on-surface-variant/60 hover:border-outline focus:border-primary focus:ring-4 focus:ring-primary/15"
                     />
@@ -54,6 +44,7 @@ export function CodeForm({handleVerify, isVerifying, verifyError}: CodeFormProp)
 
                 <button
                     type="submit"
+                    disabled={isVerifying}
                     className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary-container px-5 py-3 text-sm font-semibold text-on-primary-container shadow-[0_6px_20px_rgba(139,44,245,0.18)] transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:scale-[0.99]"
                 >
                     {isVerifying ? 'Verifying...' : 'Verify OTP'} <ArrowRight aria-hidden="true" size={17} />
@@ -65,7 +56,7 @@ export function CodeForm({handleVerify, isVerifying, verifyError}: CodeFormProp)
                 </p>
             )}
             <p className="mt-5 text-center text-xs leading-5 text-on-surface-variant">
-                Your pass ID and email must match the details on your registration.
+                Enter the 16-character code sent to the email address from the previous step.
             </p>
         </div>
     )
