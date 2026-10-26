@@ -48,7 +48,7 @@ export async function verifyLookUp(
   challengeId: string,
   code: string,
 ): Promise<VerifyLookupResult> {
-  // Challenge IDs are UUIDs; keep their stored casing consistent.
+  // clean data
   const cleanChallengeId = challengeId.trim().toLowerCase();
   const cleanCode = code.trim().toUpperCase();
   const apiKey = process.env.RESEND_API_KEY;
@@ -58,13 +58,14 @@ export async function verifyLookUp(
 
   await connectDb();
 
-  // codeHash is excluded by default in the schema, so explicitly select it.
+  // Find active challenge and include codeHash
   const challenge = await OtpChallenge.findOne({
     challengeId: cleanChallengeId,
   }).select("+codeHash");
 
   const now = new Date();
 
+  // Reject expired, consumed, or locked challenges
   if (
     !challenge ||
     challenge.consumedAt !== null ||
@@ -74,10 +75,11 @@ export async function verifyLookUp(
     return invalidCodeResult;
   }
 
+  // Compare submitted code hash safely and Increment attempts on failure
   const submittedHash = createHmac("sha256", apiKey)
     .update(cleanCode)
     .digest("hex");
-    
+
   const storedHash = Buffer.from(challenge.codeHash, "hex");
   const submittedHashBuffer = Buffer.from(submittedHash, "hex");
 
@@ -121,6 +123,7 @@ export async function verifyLookUp(
 
   if (!registration) return invalidCodeResult;
 
+  // Return a minimal attendee/ticket DTO
   return {
     ok: true,
     attendee: {
