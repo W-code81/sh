@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     }
 
     // invitation id check
-    const invitationId = event.data.public_metadata.shiftAdminInvitationId;
+    const invitationId = event.data.public_metadata?.shiftAdminInvitationId;
     if (typeof invitationId !== "string" || !isValidObjectId(invitationId)) {
       return NextResponse.json({ received: true });
     }
