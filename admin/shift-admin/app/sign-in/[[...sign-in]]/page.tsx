@@ -5,7 +5,7 @@ export default function SignInPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f5f3ee] px-5 py-12">
       <Suspense fallback={<AuthLoading label="Loading sign in…" />}>
-        <SignIn />
+        <SignIn forceRedirectUrl="/team" />
       </Suspense>
     </main>
   );
