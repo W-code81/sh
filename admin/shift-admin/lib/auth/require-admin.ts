@@ -17,7 +17,7 @@ export async function requireAdmin() {
     .lean();
 
   if (!admin) {
-    notFound();
+    redirect("/account-pending");
   }
 
   return admin;
