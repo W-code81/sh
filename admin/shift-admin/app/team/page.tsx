@@ -1,7 +1,16 @@
+import { Suspense } from "react";
 import { requireOwner } from "@/lib/auth/require-admin";
 import Link from "next/link";
 
-export default async function AdminTeamPage() {
+export default function AdminTeamPage() {
+  return (
+    <Suspense fallback={<TeamLoading />}>
+      <AdminTeamContent />
+    </Suspense>
+  );
+}
+
+async function AdminTeamContent() {
   const owner = await requireOwner();
 
   return (
@@ -105,6 +114,14 @@ export default async function AdminTeamPage() {
           </div>
         </section>
       </div>
+    </main>
+  );
+}
+
+function TeamLoading() {
+  return (
+    <main className="grid min-h-screen place-items-center bg-[#f5f3ee] px-5 text-sm text-[#70766d]" role="status">
+      Loading admin access…
     </main>
   );
 }
