@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { requireOwner } from "@/lib/auth/require-admin";
-import Link from "next/link";
+import AdminSidebar from "@/app/components/AdminSidebar";
 
 export default function AdminTeamPage() {
   return (
@@ -15,34 +15,8 @@ async function AdminTeamContent() {
 
   return (
     <main className="min-h-screen bg-[#f5f3ee] text-[#1d2a24]">
-      <div className="mx-auto grid min-h-screen max-w-360 md:grid-cols-[240px_1fr]">
-        <aside className="flex flex-col border-b border-[#e2e0d8] bg-[#f0eee7] px-5 py-6 md:border-b-0 md:border-r md:px-6">
-          <Link href="/" className="text-sm font-semibold tracking-[0.16em] text-[#315b46]">
-            SHIFT <span className="font-normal tracking-normal text-[#767c72]">CAMP ADMIN</span>
-          </Link>
-
-          <div className="mt-10">
-            <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#858a80]">
-              Workspace
-            </p>
-            <Link
-              href="/team"
-              aria-current="page"
-              className="mt-3 flex items-center gap-3 rounded-xl bg-[#315b46] px-3 py-3 text-sm font-medium text-white shadow-sm"
-            >
-              <span aria-hidden="true" className="grid size-7 place-items-center rounded-lg bg-white/15">✳</span>
-              Admin access
-            </Link>
-          </div>
-
-          <div className="mt-auto hidden rounded-2xl border border-[#e1dfd7] bg-white/70 p-4 md:block">
-            <p className="text-xs font-semibold text-[#315b46]">Owner workspace</p>
-            <p className="mt-1 text-xs leading-5 text-[#73796f]">
-              This area is restricted to active super-admins.
-            </p>
-          </div>
-        </aside>
-
+      <div className="mx-auto grid min-h-screen max-w-360 md:grid-cols-[230px_1fr]">
+        <AdminSidebar role="owner" active="team" />
         <section className="min-w-0 px-5 py-7 sm:px-8 lg:px-12 lg:py-10">
           <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[#e2e0d8] pb-6">
             <div>
