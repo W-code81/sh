@@ -3,9 +3,12 @@ import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#f5f3ee] px-5 py-12">
+    <main className="flex min-h-screen items-center justify-center bg-[var(--page)] px-5 py-12">
       <Suspense fallback={<AuthLoading />}>
-        <SignUp forceRedirectUrl="/" />
+        <SignUp
+          forceRedirectUrl="/"
+          appearance={{ variables: { colorBackground: "var(--surface)", colorForeground: "var(--text)", colorPrimary: "var(--accent)" } }}
+        />
       </Suspense>
     </main>
   );
@@ -13,7 +16,7 @@ export default function SignUpPage() {
 
 function AuthLoading() {
   return (
-    <div role="status" className="w-full max-w-md rounded-2xl border border-[#e2e0d8] bg-white p-8 text-center text-sm text-[#70766d] shadow-sm">
+    <div role="status" className="w-full max-w-md rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 text-center text-sm text-[var(--muted)] shadow-sm">
       Loading account setup…
     </div>
   );
