@@ -33,13 +33,16 @@ export async function createRegistration(payload: unknown) {
       cache: "no-store",
     });
 
-    const result = (await response.json()) as RegistrationResponse;
+    // The admin service can return an HTML error page if its deployment fails.
+    // Treat an unreadable response as an upstream error instead of letting the
+    // server action throw while trying to parse JSON.
+    const result = (await response.json().catch(() => null)) as RegistrationResponse | null;
 
-    if (!response.ok || !result.registration) {
+    if (!response.ok || !result?.registration) {
       return {
         ok: false as const,
-        error: result.error ?? "We couldn’t submit your registration. Please try again.",
-        details: result.details,
+        error: result?.error ?? "We couldn’t submit your registration. Please try again.",
+        details: result?.details,
       };
     }
 
