@@ -177,18 +177,18 @@ export default function RegistrationDirectory() {
             </span>
           </label>
 
-          <label className="flex h-11 items-center rounded-xl border border-(--border) bg-(--page) px-3">
+          <label className="flex h-11 items-center rounded-xl border border-(--border) bg-background px-3">
             <span className="sr-only">Filter registration source</span>
-            <select value={source} onChange={onSourceChange} className="w-full bg-transparent text-sm text-(--text) outline-none">
+            <select value={source} onChange={onSourceChange} className="w-full bg-transparent text-sm text-foreground outline-none">
               <option value="all">All sources</option>
               <option value="website">Website</option>
               <option value="on_arrival">On arrival</option>
             </select>
           </label>
 
-          <label className="flex h-11 items-center rounded-xl border border-(--border) bg-(--page) px-3">
+          <label className="flex h-11 items-center rounded-xl border border-(--border) bg-background px-3">
             <span className="sr-only">Filter registration status</span>
-            <select value={status} onChange={onStatusChange} className="w-full bg-transparent text-sm text-(--text) outline-none">
+            <select value={status} onChange={onStatusChange} className="w-full bg-transparent text-sm text-foreground outline-none">
               <option value="all">All statuses</option>
               <option value="active">Active</option>
               <option value="cancelled">Cancelled</option>
@@ -205,13 +205,13 @@ export default function RegistrationDirectory() {
 
         {isLoading && !data ? (
           <div className="mt-5 grid gap-3" aria-label="Loading registrations" role="status">
-            {Array.from({ length: 4 }, (_, index) => <div key={index} className="h-[4.5rem] animate-pulse rounded-xl bg-(--surface-muted)" />)}
+            {Array.from({ length: 4 }, (_, index) => <div key={index} className="h-18 animate-pulse rounded-xl bg-(--surface-muted)" />)}
           </div>
         ) : data?.registrations.length ? (
           <>
             <div className="mt-5 grid gap-3 md:hidden" aria-label="Attendee list">
               {data.registrations.map((registration) => (
-                <article key={registration.id} className="rounded-xl border border-(--border) bg-(--page) p-4">
+                <article key={registration.id} className="rounded-xl border border-(--border) bg-background p-4">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
                       <h3 className="truncate text-sm font-semibold">{registration.name}</h3>
@@ -232,7 +232,7 @@ export default function RegistrationDirectory() {
             </div>
 
             <div className="mt-5 hidden overflow-x-auto md:block">
-              <table className="w-full min-w-[48rem] text-left text-sm">
+              <table className="w-full min-w-3xl text-left text-sm">
                 <thead className="bg-(--surface-muted) text-[11px] uppercase tracking-[0.12em] text-(--subtle)">
                   <tr>
                     <th scope="col" className="rounded-l-lg px-4 py-3 font-semibold">Attendee</th>
@@ -335,14 +335,14 @@ function RegistrationDetailsModal({
   return (
     <div className="fixed inset-0 z-50 grid place-items-center p-3 sm:p-6">
       <button type="button" aria-label="Close attendee details" onClick={onClose} className="absolute inset-0 cursor-default bg-black/55 backdrop-blur-[2px]" />
-      <section role="dialog" aria-modal="true" aria-labelledby="attendee-details-title" className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-(--border) bg-(--surface) p-5 text-(--text) shadow-2xl sm:p-7">
+      <section role="dialog" aria-modal="true" aria-labelledby="attendee-details-title" className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-(--border) bg-(--surface) p-5 text-foreground shadow-2xl sm:p-7">
         <header className="flex items-start justify-between gap-4 border-b border-(--border) pb-5">
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-(--accent)">Attendee record</p>
             <h2 id="attendee-details-title" className="mt-1 truncate text-xl font-semibold">{details?.attendee.fullName ?? "Attendee details"}</h2>
             {details && <p className="mt-1 font-mono text-xs text-(--muted)">{details.passId}</p>}
           </div>
-          <button autoFocus type="button" onClick={onClose} aria-label="Close details" className="grid size-9 shrink-0 place-items-center rounded-lg border border-(--border) text-(--muted) transition hover:text-(--text) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)">
+          <button autoFocus type="button" onClick={onClose} aria-label="Close details" className="grid size-9 shrink-0 place-items-center rounded-lg border border-(--border) text-(--muted) transition hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent)">
             <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="m6 6 12 12M18 6 6 18" /></svg>
           </button>
         </header>
@@ -399,5 +399,5 @@ function DetailsGroup({
 }
 
 function DetailLine({ label, value }: { label: string; value: string }) {
-  return <div className="flex items-start justify-between gap-4 text-sm"><dt className="shrink-0 text-(--subtle)">{label}</dt><dd className="min-w-0 break-words text-right font-medium capitalize text-(--text)">{value}</dd></div>;
+  return <div className="flex items-start justify-between gap-4 text-sm"><dt className="shrink-0 text-(--subtle)">{label}</dt><dd className="min-w-0 wrap-break-word text-right font-medium capitalize text-foreground">{value}</dd></div>;
 }
