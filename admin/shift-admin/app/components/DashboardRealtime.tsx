@@ -15,7 +15,11 @@ function listensForRegistrationChanges(pathname: string) {
 }
 
 /** Keeps admin data fresh when MongoDB reports a registration or payment change. */
-export default function DashboardRealtime() {
+export default function DashboardRealtime({
+  onRegistrationChange,
+}: {
+  onRegistrationChange?: () => void;
+}) {
   const pathname = usePathname();
   const router = useRouter();
   const [connection, setConnection] = useState<ConnectionState>("connecting");
@@ -26,7 +30,10 @@ export default function DashboardRealtime() {
     // Next's regular dev server doesn't provide Vercel's WebSocket upgrade
     // runtime, so use a light refresh interval locally.
     if (process.env.NODE_ENV === "development") {
-      const interval = setInterval(() => router.refresh(), 15_000);
+      const interval = setInterval(() => {
+        router.refresh();
+        onRegistrationChange?.();
+      }, 15_000);
       return () => clearInterval(interval);
     }
 
@@ -49,6 +56,7 @@ export default function DashboardRealtime() {
         setConnection("live");
         // Catch up on changes that may have happened while the socket was down.
         router.refresh();
+        onRegistrationChange?.();
       });
 
       // if the server sends a notification that a registration has changed, it refreshes and gets latest data
@@ -62,6 +70,7 @@ export default function DashboardRealtime() {
             event.type === "registration-change"
           ) {
             router.refresh();
+            onRegistrationChange?.();
           }
         } catch {
           // Ignore malformed events and keep the connection available.
@@ -86,7 +95,7 @@ export default function DashboardRealtime() {
       if (reconnectTimer) clearTimeout(reconnectTimer);
       socket?.close();
     };
-  }, [pathname, router]);
+  }, [onRegistrationChange, pathname, router]);
 
   if (!listensForRegistrationChanges(pathname)) return null;
 
