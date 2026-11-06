@@ -395,7 +395,7 @@ function DetailsGroup({
   className?: string;
   children: React.ReactNode;
 }) {
-  return <section className={`rounded-xl border border-(--border) bg-(--page) p-4 ${className}`}><h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-(--subtle)">{title}</h3><div className="space-y-3">{children}</div></section>;
+  return <section className={`rounded-xl border border-(--border) bg-background p-4 ${className}`}><h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-(--subtle)">{title}</h3><div className="space-y-3">{children}</div></section>;
 }
 
 function DetailLine({ label, value }: { label: string; value: string }) {
