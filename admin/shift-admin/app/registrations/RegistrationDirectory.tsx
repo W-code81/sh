@@ -52,6 +52,7 @@ export default function RegistrationDirectory() {
     setDetailsRefreshVersion((version) => version + 1);
   }, []);
 
+  // fetch the list of registrations when the page, query, source, status or refreshVersion changes
   useEffect(() => {
     const controller = new AbortController();
     const timer = setTimeout(async () => {
@@ -88,6 +89,7 @@ export default function RegistrationDirectory() {
     };
   }, [page, query, refreshVersion, source, status]);
 
+  // fetch details for the selected attendee when the selectedId changes or when the detailsRefreshVersion changes (e.g. after a registration is updated)
   useEffect(() => {
     if (!selectedId) return;
 
@@ -103,7 +105,7 @@ export default function RegistrationDirectory() {
         if (!response.ok || !result.registration) {
           throw new Error(result.error ?? "Unable to load attendee details.");
         }
-        setDetails(result.registration);
+        setDetails(result.registration); // set the details state with the fetched registration details
       } catch (error) {
         if (error instanceof Error && error.name === "AbortError") return;
         setDetailsError(error instanceof Error ? error.message : "Unable to load attendee details.");
@@ -115,30 +117,36 @@ export default function RegistrationDirectory() {
     return () => controller.abort();
   }, [detailsRefreshVersion, selectedId]);
 
+  // open the details modal for a specific attendee, resetting the details state and setting the selectedId
   const openDetails = (id: string) => {
-    setDetails(null);
-    setDetailsError(null);
-    setDetailsLoading(true);
+    setDetails(null); //removes the previous details from the modal while loading new details
+    setDetailsError(null); //removes the previous error from the modal while loading new details
+    setDetailsLoading(true); //shows the loading state in the modal while loading new details
     setSelectedId(id);
   };
 
+  // close the details modal by resetting the selectedId
   const closeDetails = useCallback(() => setSelectedId(null), []);
 
+  // reset the page to 1 when the query, source or status changes
   const onQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
     setPage(1);
   };
 
+  // reset the page to 1 when the source filter changes
   const onSourceChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setSource(event.target.value as SourceFilter);
     setPage(1);
   };
 
+  // reset the page to 1 when the status filter changes
   const onStatusChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setStatus(event.target.value as StatusFilter);
     setPage(1);
   };
 
+  // calculate the first and last record numbers for the current page based on the pagination data
   const pagination = data?.pagination;
   const firstRecord = pagination && pagination.total > 0
     ? (pagination.page - 1) * pagination.pageSize + 1
@@ -163,6 +171,8 @@ export default function RegistrationDirectory() {
 
       <section className="mt-5 rounded-2xl border border-(--border) bg-(--surface) p-4 shadow-[0_8px_24px_rgba(35,48,38,0.035)] sm:p-5">
         <div className="grid gap-3 md:grid-cols-[minmax(16rem,1fr)_12rem_12rem]">
+          
+          {/* searchbar */}
           <label className="block">
             <span className="sr-only">Search attendees</span>
             <span className="flex h-11 items-center gap-3 rounded-xl border border-(--border) bg-background px-3 text-(--muted) focus-within:border-(--accent)">
@@ -176,7 +186,8 @@ export default function RegistrationDirectory() {
               />
             </span>
           </label>
-
+            
+            {/* source selection */}
           <label className="flex h-11 items-center rounded-xl border border-(--border) bg-background px-3">
             <span className="sr-only">Filter registration source</span>
             <select value={source} onChange={onSourceChange} className="w-full bg-transparent text-sm text-foreground outline-none">
@@ -185,7 +196,8 @@ export default function RegistrationDirectory() {
               <option value="on_arrival">On arrival</option>
             </select>
           </label>
-
+            
+            {/* status selection */}
           <label className="flex h-11 items-center rounded-xl border border-(--border) bg-background px-3">
             <span className="sr-only">Filter registration status</span>
             <select value={status} onChange={onStatusChange} className="w-full bg-transparent text-sm text-foreground outline-none">
@@ -195,7 +207,8 @@ export default function RegistrationDirectory() {
             </select>
           </label>
         </div>
-
+        
+        {/* Error display */}
         {loadError && (
           <div role="alert" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-(--warning-border) bg-(--warning-bg) px-4 py-3 text-sm text-(--warning-text)">
             <p>{loadError}</p>
@@ -203,12 +216,14 @@ export default function RegistrationDirectory() {
           </div>
         )}
 
+        {/* Skeleton load */}
         {isLoading && !data ? (
           <div className="mt-5 grid gap-3" aria-label="Loading registrations" role="status">
             {Array.from({ length: 4 }, (_, index) => <div key={index} className="h-18 animate-pulse rounded-xl bg-(--surface-muted)" />)}
           </div>
         ) : data?.registrations.length ? (
           <>
+            {/* Mobile view */}
             <div className="mt-5 grid gap-3 md:hidden" aria-label="Attendee list">
               {data.registrations.map((registration) => (
                 <article key={registration.id} className="rounded-xl border border-(--border) bg-background p-4">
@@ -231,6 +246,7 @@ export default function RegistrationDirectory() {
               ))}
             </div>
 
+            {/*Desktop view  */}
             <div className="mt-5 hidden overflow-x-auto md:block">
               <table className="w-full min-w-3xl text-left text-sm">
                 <thead className="bg-(--surface-muted) text-[11px] uppercase tracking-[0.12em] text-(--subtle)">
@@ -265,7 +281,10 @@ export default function RegistrationDirectory() {
               </table>
             </div>
           </>
+
+          // no registrations found
         ) : !isLoading && (
+          // show different messages based on whether the user has applied any filters or search query
           <div className="mt-5 rounded-xl border border-dashed border-(--border) px-5 py-12 text-center">
             <span aria-hidden="true" className="mx-auto grid size-11 place-items-center rounded-xl bg-(--accent-soft) text-lg text-(--accent)">⌕</span>
             <h3 className="mt-3 text-sm font-semibold">{query || source !== "all" || status !== "all" ? "No matching attendees" : "No registrations yet"}</h3>
@@ -273,6 +292,7 @@ export default function RegistrationDirectory() {
           </div>
         )}
 
+        {/* pagination footer */}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-(--border) pt-4">
           <p className="text-xs text-(--muted)">
             {pagination ? `Showing ${firstRecord}–${lastRecord} of ${pagination.total}` : "Page size: 10 attendees"}
@@ -285,6 +305,7 @@ export default function RegistrationDirectory() {
         </div>
       </section>
 
+      {/* opens modal when the more icons is clicked */}
       {selectedId && (
         <RegistrationDetailsModal
           details={details}
@@ -313,6 +334,7 @@ function MoreIcon() {
   return <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4" fill="currentColor"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>;
 }
 
+// details modal that shows the attendee's registration details when the more icon is clicked
 function RegistrationDetailsModal({
   details,
   error,
@@ -347,11 +369,14 @@ function RegistrationDetailsModal({
           </button>
         </header>
 
+        {/*show loading, error or details based on the state */}
         {isLoading ? (
           <div className="grid gap-3 py-6" role="status"><p className="text-sm text-(--muted)">Loading attendee details…</p><div className="h-24 animate-pulse rounded-xl bg-(--surface-muted)" /><div className="h-24 animate-pulse rounded-xl bg-(--surface-muted)" /></div>
         ) : error ? (
           <div role="alert" className="mt-5 rounded-xl border border-(--warning-border) bg-(--warning-bg) px-4 py-3 text-sm text-(--warning-text)">{error}</div>
         ) : details ? (
+          
+          // show the details in a grid layout with sections for attendee, registration, emergency contact, payment and medical/dietary requests
           <div className="grid gap-4 py-5 sm:grid-cols-2">
             <DetailsGroup title="Attendee">
               <DetailLine label="Email" value={details.attendee.email} />
@@ -386,6 +411,7 @@ function RegistrationDetailsModal({
   );
 }
 
+// a group of details in the details modal, with a title and a list of detail lines
 function DetailsGroup({
   title,
   className = "",
@@ -398,6 +424,7 @@ function DetailsGroup({
   return <section className={`rounded-xl border border-(--border) bg-background p-4 ${className}`}><h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-(--subtle)">{title}</h3><div className="space-y-3">{children}</div></section>;
 }
 
+// a single line of details in the details modal, with a label and a value
 function DetailLine({ label, value }: { label: string; value: string }) {
   return <div className="flex items-start justify-between gap-4 text-sm"><dt className="shrink-0 text-(--subtle)">{label}</dt><dd className="min-w-0 wrap-break-word text-right font-medium capitalize text-foreground">{value}</dd></div>;
 }
